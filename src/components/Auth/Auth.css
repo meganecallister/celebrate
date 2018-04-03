@@ -1,0 +1,56 @@
+.auth {
+    background-color: gray;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.left-side {
+    background-color: white;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    color: black;
+    font-size: 70px;
+}
+.logo {
+    background-color: pink;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    margin: 50px;
+}
+.right-side {
+    background-color: pink;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.catch-phrase {
+    color: black;
+    font-size: 25px;
+    margin: 20px;
+}
+.login-signup {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: white;
+    height: 30px;
+    width: 100px;
+    margin: 20px;
+}
+button:focus {
+    outline: none;
+}
