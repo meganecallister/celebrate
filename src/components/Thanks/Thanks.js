@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Auth.css';
+import './Thanks.css';
 import cupcake from '../../cupcake.jpg';
 
 class Auth extends Component {
@@ -15,11 +15,7 @@ class Auth extends Component {
                     </div>
                 </div>
                 <div className='right-side'>
-                    <p className='catch-phrase'>Celebrating the lives of others.</p>
-                    <div className='login-signup'>
-                        <button className='auth-button'>Log in</button>
-                        <button className='auth-button'>Sign up</button>
-                    </div>
+                    <p className='catch-phrase'>Thanks for visiting Celebrate!</p>
                 </div>
             </div>
         )

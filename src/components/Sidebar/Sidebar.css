@@ -1,0 +1,7 @@
+.sidebar {
+    background-color: gray;
+    margin: 0;
+    height: 100vh;
+    width: 200px;
+    float: left;
+}
