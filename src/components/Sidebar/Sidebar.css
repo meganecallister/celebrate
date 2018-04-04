@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 .sidebar {
-    background-color: white;
-    margin: 0;
-    height: 100vh;
+    /* background-color: rgb(63, 63, 63);
+    opacity: .5; */
+    font-family: 'Raleway', sans-serif;
+    padding-top: 50px;
+    height: 100%;
     width: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    box-shadow: 1px 0px 3px #aaa;
+    position: fixed;
+    margin-left: 20px;
+    /* box-shadow: 1px 0px 3px rgb(104, 104, 104); */
 }
 .info {
     display: flex;
@@ -15,24 +21,24 @@
     align-items: center;
 }
 .profile-pic {
-    background-color: black;
-    height: 180px;
-    width: 180px;
+    background-color: #2d2d2d;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
-    margin-top: 10px;
+    margin: 20px;
+    box-shadow: 1px 1px 3px #aaa;
 
 }
 .name-birthday {
     height: 100px;
-    margin: 20px;
 }
 .sidebar-name{
-    color: black;
+    color: #2d2d2d;
     font-size: 30px;
-    margin: 5px;
+    margin: 0;
 }
-.sidebar-bday {
-    color: black;
-    font-size: 20px;
-    margin: 5px;
-}
+/* .sidebar-bday {
+    color: #2d2d2d;
+    font-size: 30px;
+    margin: 0;
+} */

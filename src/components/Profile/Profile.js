@@ -9,10 +9,6 @@ class Profile extends Component {
             <div className='profile'>
                 <Nav/>
                 <Sidebar/>
-                <div className='white-space'>
-                    <p>Here is some information...</p>
-                </div>
-                <div className='balance'></div>
             </div>
         )
     }

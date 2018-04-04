@@ -1,16 +1,5 @@
-main {
+.home {
     background: #FF567B;
-    height: 100%;
+    height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.white-space {
-    background-color: white;
-    height: 100%;
-    width: 20px;
-    box-sizing: border-box;
-    float: right;
-    margin: auto;
 }

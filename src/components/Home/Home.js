@@ -8,13 +8,7 @@ class Home extends Component {
         return (
             <div className='home'>
                 <Nav/>
-                <main>
-                    <Sidebar/>
-                    <div className='white-space'>
-                        <p>Here is some information...</p>
-                    </div>
-                </main>
-                
+                <Sidebar/>
             </div>
         )
     }

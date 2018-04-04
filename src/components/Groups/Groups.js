@@ -9,10 +9,6 @@ class Groups extends Component {
             <div className='groups'>
                 <Nav/>
                 <Sidebar/>
-                <div className='white-space'>
-                    <p>Here is some information...</p>
-                </div>
-                <div className='balance'></div>
             </div>
         )
     }

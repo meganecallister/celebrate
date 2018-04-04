@@ -7,13 +7,11 @@ function Nav(props) {
     return (
         <div className='nav'>
                 <div className='page-links'>
-                    <Link to='/profile'><button className='link-button'>Profile</button></Link>
-                    <Link to='/friends'><button className='link-button'>Friends</button></Link>
-                    <Link to='/groups'><button className='link-button'>Groups</button></Link>
-                </div>
-                <div className='bottom-buttons'>
-                    <Link to='/home'><button className='sidebar-button'>Home</button></Link>
-                    <Link to='/thanks'><button className='sidebar-button'>Logout</button></Link>
+                    <Link to='/profile'><button className='link-button'>PROFILE</button></Link>
+                    <Link to='/friends'><button className='link-button'>FRIENDS</button></Link>
+                    <Link to='/groups'><button className='link-button'>GROUPS</button></Link>
+                    <Link to='/home'><button className='link-button'>HOME</button></Link>
+                    <Link to='/thanks'><button className='link-button'>LOGOUT</button></Link>
                 </div>
         </div>
     )

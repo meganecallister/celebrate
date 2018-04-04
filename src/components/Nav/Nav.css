@@ -1,52 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 .nav {
     background-color: #2d2d2d;
-    margin-left: 200px;
     height: 50px;
-    width: calc(100vw - 200px);
+    width: 100vw;
+    
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     position: fixed;
-    padding-left: 200px;
     box-sizing: border-box;
+    box-shadow: 0px 1px 3px rgb(104, 104, 104);
 }
 .page-links {
-    width: 40%;
+    width: 50vw;
     height: 50px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding-right: 20px;
 }
 
 .link-button {
-    background: #F2BCFF;
-    text-decoration: none;
-    font-size: 20px;
-    width: 120px;
-    margin: 10px;
-    height: 50px;
+    background: #2d2d2d;
+    color: rgb(246, 209, 255);
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    margin-right: 10px;
+    height: 40px;
     border: none;
-    /* text-decoration: none; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .link-button:hover {
-    background: rgb(111, 184, 179);
+    color: white;
 }
-.bottom-buttons {
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-
-}
-.sidebar-button {
-    background-color: white;
-    font-size: 20px;
-    height: 40px;
-    width: 100px;
-    border: none;
-}
-.sidebar-button:hover {
-    background-color: #ddd;
+.link-button:visited {
+    color: rgb(235, 153, 255);
 }

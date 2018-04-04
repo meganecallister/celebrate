@@ -9,10 +9,6 @@ class Friends extends Component {
             <div className='friends'>
                 <Nav/>
                 <Sidebar/>
-                <div className='white-space'>
-                    <p>Here is some information...</p>
-                </div>
-                <div className='balance'></div>
             </div>
         )
     }

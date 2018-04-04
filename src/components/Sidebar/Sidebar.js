@@ -7,10 +7,10 @@ function Sidebar(props) {
     return (
         <div className='sidebar'>
             <section className='info'>
-                <div className='profile-pic'></div>
+                <Link to='/profile'><div className='profile-pic'></div></Link>
                 <div className='name-birthday'>
                     <p className='sidebar-name'>Username</p>
-                    <p className='sidebar-bday'>Birthday</p>            
+                    {/* <p className='sidebar-bday'>Birthday</p>             */}
                 </div>
             </section>
         </div>
