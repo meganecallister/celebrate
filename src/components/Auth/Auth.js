@@ -16,8 +16,9 @@ class Auth extends Component {
                 <div className='right-side'>
                     <p className='catch-phrase'>Celebrating the lives of others.</p>
                     <div className='login-signup'>
-                        <Link to='/home'><button className='auth-button'>Log in</button></Link>
-                        <Link to='/profile'><button className='auth-button'>Sign up</button></Link>
+                        <a href={process.env.REACT_APP_LOGIN}>
+                            <button className='auth-button'>Join the celebration!</button>
+                        </a>
                     </div>
                 </div>
             </div>
