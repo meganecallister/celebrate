@@ -46,8 +46,9 @@ img {
     align-items: center;
     justify-content: center;
 }
-auth-button {
+.auth-button {
     background-color: white;
+    font-size: 20px;
     height: 50px;
     width: 150px;
     margin: 10px;

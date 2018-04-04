@@ -1,0 +1,16 @@
+main {
+    background: #FF567B;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.white-space {
+    background-color: white;
+    height: 100%;
+    width: 20px;
+    box-sizing: border-box;
+    float: right;
+    margin: auto;
+}

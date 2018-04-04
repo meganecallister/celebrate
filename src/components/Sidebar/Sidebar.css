@@ -1,7 +1,38 @@
 .sidebar {
-    background-color: gray;
+    background-color: white;
     margin: 0;
     height: 100vh;
     width: 200px;
-    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 0px 3px #aaa;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-pic {
+    background-color: black;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    margin-top: 10px;
+
+}
+.name-birthday {
+    height: 100px;
+    margin: 20px;
+}
+.sidebar-name{
+    color: black;
+    font-size: 30px;
+    margin: 5px;
+}
+.sidebar-bday {
+    color: black;
+    font-size: 20px;
+    margin: 5px;
 }

@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import './Auth.css';
 import cupcake from '../../cupcake.jpg';
 
 class Auth extends Component {
     render() {
-        {this.props.history}
         return (
             <div className='auth'>
-
                 <div className='left-side'>
                     <h1>Celebrate</h1>
                     <div className='logo'>
@@ -17,8 +16,8 @@ class Auth extends Component {
                 <div className='right-side'>
                     <p className='catch-phrase'>Celebrating the lives of others.</p>
                     <div className='login-signup'>
-                        <button className='auth-button'>Log in</button>
-                        <button className='auth-button'>Sign up</button>
+                        <Link to='/home'><button className='auth-button'>Log in</button></Link>
+                        <Link to='/profile'><button className='auth-button'>Sign up</button></Link>
                     </div>
                 </div>
             </div>

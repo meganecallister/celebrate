@@ -6,8 +6,13 @@ function Sidebar(props) {
     console.log(props.history);
     return (
         <div className='sidebar'>
-            Sidebar
-            <Link to='/'><button>Logout</button></Link>
+            <section className='info'>
+                <div className='profile-pic'></div>
+                <div className='name-birthday'>
+                    <p className='sidebar-name'>Username</p>
+                    <p className='sidebar-bday'>Birthday</p>            
+                </div>
+            </section>
         </div>
     )
 }

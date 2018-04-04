@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import './Thanks.css';
+import { Link } from 'react-router-dom';
 import cupcake from '../../cupcake.jpg';
 
 class Auth extends Component {
     render() {
-        {this.props.history}
         return (
             <div className='auth'>
-
                 <div className='left-side'>
-                    <h1>Celebrate</h1>
+                    <Link to='/'><h1>Celebrate</h1></Link>
                     <div className='logo'>
                         <img src={cupcake} alt='delicious chocolate cupcake'/>
                     </div>
