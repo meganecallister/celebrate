@@ -40,7 +40,7 @@ passport.use(new Auth0Strategy({
     clientSecret: CLIENT_SECRET,
     callbackURL: CALLBACK_URL,
     scope: 'openid profile'
-} function(accessToken, refreshToken, extraParams, profile, done) {
+}, function(accessToken, refreshToken, extraParams, profile, done) {
     const db = app.get('db')
     db.find_user([profile.id]).then( userResult => {
         if(!userResult[0]) {
@@ -66,7 +66,7 @@ passport.deserializeUser((id, done) => {
     })
 })
 
-app.get('/auth/me', passport.authenticate('auth0'))
+app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/home',
     failureRedirect: 'http://localhost:3000'
@@ -82,6 +82,6 @@ app.get('/auth/me', function(req, res) {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect('http://localhost:3000/')
+    res.redirect('http://localhost:3000/#/thanks')
 })
 app.listen(SERVER_PORT, () => {console.log(`${SERVER_PORT} bunnies hopping down Center Street.`)})

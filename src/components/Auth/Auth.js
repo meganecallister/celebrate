@@ -1,29 +1,20 @@
-import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import './Auth.css';
 import cupcake from '../../cupcake.jpg';
 
-class Auth extends Component {
-    render() {
-        return (
-            <div className='auth'>
-                <div className='left-side'>
-                    <h1>Celebrate</h1>
-                    <div className='logo'>
-                        <img src={cupcake} alt='delicious chocolate cupcake'/>
-                    </div>
-                </div>
-                <div className='right-side'>
-                    <p className='catch-phrase'>Celebrating the lives of others.</p>
-                    <div className='login-signup'>
-                        <a href={process.env.REACT_APP_LOGIN}>
-                            <button className='auth-button'>Join the celebration!</button>
-                        </a>
-                    </div>
-                </div>
+export default function Auth() {
+    return (
+        <div className='auth'>
+            <div className='left-side'>
+                <h1>Celebrate</h1>
+                <img src={cupcake} alt='delicious chocolate cupcake'/>
             </div>
-        )
-    }
+            <div className='right-side'>
+                <p className='catch-phrase'>Join us in celebrating the lives of others.</p>
+                <a href={process.env.REACT_APP_LOGIN}>
+                    <button className='auth-button'>click here!</button>
+                </a>
+            </div>
+        </div>
+    )    
 }
-
-export default Auth;
