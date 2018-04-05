@@ -2,13 +2,13 @@
 
 .nav {
     background-color: #2d2d2d;
-    height: 50px;
+    height: 58px;
     width: 100vw;
-    
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: fixed;
+    z-index: 5;
     box-sizing: border-box;
     box-shadow: 0px 1px 3px rgb(104, 104, 104);
 }
@@ -25,7 +25,7 @@
     background: #2d2d2d;
     color: rgb(246, 209, 255);
     font-family: 'Raleway', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 10px;
     height: 40px;
     border: none;

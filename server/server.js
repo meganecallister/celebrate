@@ -1,9 +1,8 @@
 require ('dotenv').config();
 const express = require('express');
 const session = require('express-session');
-// const bodyParser = require('body-parser')
-const axios = require('axios');
 // const pc = require('./profile_controller');
+// const bodyParser = require('body-parser');
 const massive = require('massive');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
@@ -67,7 +66,7 @@ passport.deserializeUser((id, done) => {
 
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/main',
+    successRedirect: 'http://localhost:3000/#/main/home',
     failureRedirect: 'http://localhost:3000'
 }))
 
@@ -79,6 +78,18 @@ app.get('/auth/me', function(req, res) {
         res.status(401).send('You need to log in!');
     }
 })
+
+app.post('/api/updateInfo', function(req, res) {
+    console.log(req.body);
+    const db = req.app.get('db');
+    const { birthday, color, cake, iceCream } = req.body;
+
+    db.update_info([birthday, color, cake, iceCream]).then(info => {
+        console.log(info);
+        res.status(200).send(info);
+    })
+})
+
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();

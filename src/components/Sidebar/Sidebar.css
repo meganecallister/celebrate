@@ -1,38 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 .sidebar {
-    background-color: #cacaca;
+    background-color: #F2BCFF;
     font-family: 'Raleway', sans-serif;
-    padding-top: 50px;
+    padding: 5px;
+    padding-top: 65px;
     height: 100%;
-    width: 200px;
+    width: 15vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     position: fixed;
-    /* margin-left: 20px; */
-    /* box-shadow: 1px 0px 3px rgb(104, 104, 104); */
+    box-sizing: border-box;
 }
 .info {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.profile-pic {
-    background-color: #2d2d2d;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    margin: 20px;
-    box-shadow: 1px 1px 3px #aaa;
-
-}
-.name-birthday {
-    height: 100px;
-}
-.sidebar-name{
-    color: #2d2d2d;
-    font-size: 30px;
-    margin: 0;
 }
