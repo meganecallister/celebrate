@@ -1,11 +1,9 @@
 CREATE TABLE IF NOT EXISTS Users (
     id SERIAL PRIMARY KEY,
-    userName VARCHAR(100),
-    displayName TEXT,
-    authId TEXT,
-    email VARCHAR(100),
+    display_name TEXT,
+    auth_id TEXT,
+    img TEXT,
     birthday TEXT,
-    image TEXT,
     color TEXT,
     cake TEXT,
     iceCream TEXT,
@@ -16,5 +14,5 @@ CREATE TABLE IF NOT EXISTS Users (
     surprises BOOLEAN
 );
 
-INSERT INTO Users ( userName, displayName, authId, email, birthday, image, color, cake, iceCream, candy, drink, restaurant, mail, surprises )
-VALUES ('megcall', 'Meg Call', '12345', 'ldsgirlo@hotmail.com', '12/12/12', 'http...', 'yellow', 'cinnamon', 'mint', 'snickers', 'Dr. Pepper', 'Zupas', true, true);
+INSERT INTO Users ( display_name, auth_id, img, birthday, color, cake, iceCream, candy, drink, restaurant, mail, surprises )
+VALUES ('Meg Call', '12345', 'http...', '12/12/12', 'yellow', 'cinnamon', 'mint', 'snickers', 'Dr. Pepper', 'Zupas', true, true);

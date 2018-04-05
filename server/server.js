@@ -1,10 +1,9 @@
-import { read } from 'fs';
-
 require ('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser')
+const session = require('express-session');
+// const bodyParser = require('body-parser')
 const axios = require('axios');
-const pc = require('./profile_controller');
+// const pc = require('./profile_controller');
 const massive = require('massive');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
@@ -20,7 +19,7 @@ const {
 } = process.env;
 
 const app = express();
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 massive(CONNECTION_STRING).then( db => {
     app.set('db', db)
@@ -41,7 +40,7 @@ passport.use(new Auth0Strategy({
     callbackURL: CALLBACK_URL,
     scope: 'openid profile'
 }, function(accessToken, refreshToken, extraParams, profile, done) {
-    const db = app.get('db')
+    const db = app.get('db');
     db.find_user([profile.id]).then( userResult => {
         if(!userResult[0]) {
             db.create_user([
@@ -68,20 +67,22 @@ passport.deserializeUser((id, done) => {
 
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/home',
+    successRedirect: 'http://localhost:3000/#/main',
     failureRedirect: 'http://localhost:3000'
 }))
 
 app.get('/auth/me', function(req, res) {
     if(req.user) {
+        console.log('send req.user');
         res.status(200).send(req.user);
     } else {
-        res.status(401).send('You need to log in! (I think.)');
+        res.status(401).send('You need to log in!');
     }
 })
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect('http://localhost:3000/#/thanks')
+    res.redirect('http://localhost:3000/')
 })
+
 app.listen(SERVER_PORT, () => {console.log(`${SERVER_PORT} bunnies hopping down Center Street.`)})

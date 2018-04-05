@@ -17,6 +17,7 @@ export function getUserInfo() {
 }
 
 export default function reducer(state = initialState, action) {
+    console.log('action', action);
      switch( action.type ) {
          case UPDATE_USER_INFO + '_FULFILLED':
             return Object.assign({}, state, {user: action.payload})
