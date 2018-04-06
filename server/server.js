@@ -2,7 +2,7 @@ require ('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 // const pc = require('./profile_controller');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const massive = require('massive');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
@@ -18,7 +18,7 @@ const {
 } = process.env;
 
 const app = express();
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 massive(CONNECTION_STRING).then( db => {
     app.set('db', db)
@@ -79,14 +79,14 @@ app.get('/auth/me', function(req, res) {
     }
 })
 
-app.post('/api/updateInfo', function(req, res) {
+app.post('/api/updateInfo', (req, res) => {
     console.log(req.body);
     const db = req.app.get('db');
     const { birthday, color, cake, iceCream } = req.body;
 
     db.update_info([birthday, color, cake, iceCream]).then(info => {
         console.log(info);
-        res.status(200).send(info);
+        // res.status(200).send(info);
     })
 })
 

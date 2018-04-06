@@ -5,24 +5,26 @@ import { connect } from 'react-redux';
 import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
 
 class Profile extends Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
-    //         party: {}
-    //     }
-    // }
+    constructor() {
+        super()
+
+        this.handleSave = this.handleSave.bind(this);
+    }
+
+
+
     handleSave() {
         const { birthday, color, cake, iceCream } = this.props;
-        // this.setState({
-            
-        const party = {
+
+        const body = {
                 birthday,
                 color,
                 cake,
                 iceCream
             }
-        // })
-        axios.post('/api/updateInfo', party)
+            console.log(body);
+        axios.post('/api/updateInfo', body)
+        .then(console.log('I am trying to post...'))
         .catch(err => {
             console.log(err);
         })
@@ -39,16 +41,18 @@ class Profile extends Component {
 
                 <p>What is your favorite...</p>
                 <ul>
-                    <li>color?</li>
-                    <input onChange={ e => updateColorType( e.target.value) }/>
+                    <li>color? <input onChange={ e => updateColorType( e.target.value) }/></li>
 
-                    <li>cake?</li>
-                    <input onChange={ e => updateCakeType( e.target.value) }/>
+                    <li>cake? <input onChange={ e => updateCakeType( e.target.value) }/></li>
 
-                    <li>ice cream?</li>
-                    <input onChange={ e => updateIceCreamType( e.target.value) }/>
+                    <li>ice cream? <input onChange={ e => updateIceCreamType( e.target.value) }/></li>
                 </ul>
-                <button onClick={this.handleSave()}>Save</button>
+                <div className='check-ice-cream'>
+                { this.props.birthday && this.props.color &&this.props.cake && this.props.iceCream
+                ?
+                <button onClick={this.handleSave}>Save</button>
+                : null }
+                </div>
             </div>
         )
     }

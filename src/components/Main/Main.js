@@ -9,24 +9,26 @@ import Home from '../Home/Home';
 import Profile from '../Profile/Profile';
 import Friends from '../Friends/Friends';
 import Groups from '../Groups/Groups';
+// import axios from 'axios';
 
 class Main extends Component {
     constructor() {
         super();
         this.state = {
-            //profile favorites
+        //profile favorites
             birthday: '',
             color: '',
             cake: '',
             iceCream: '',
-            //friends list
-            //groups list
+        //friends list
+        //groups list
         }
         //binding stuff?
     }
     componentDidMount() {
         console.log('Main: the component mounted');
         this.props.getUserInfo();
+        // this.props.handleSave();
     }
 
     //Profile page
@@ -42,9 +44,7 @@ class Main extends Component {
     handleChangeIceCream(e) {
         this.setState({iceCream: e.target.value});
     }
-
-    
-
+   
 
     render() {
         const { user } = this.props

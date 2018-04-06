@@ -6,6 +6,7 @@ const initialState = {
     color: '',
     cake: '',
     iceCream: ''
+    // party: {}
 }
 
 
@@ -15,6 +16,7 @@ const UPDATE_BIRTHDAY_TYPE = 'UPDATE_BIRTHDAY_TYPE';
 const UPDATE_COLOR_TYPE = 'UPDATE_COLOR_TYPE';
 const UPDATE_CAKE_TYPE = 'UPDATE_CAKE_TYPE';
 const UPDATE_ICE_CREAM_TYPE = 'UPDATE_ICE_CREAM_TYPE';
+// const HANDLE_SAVE = 'HANDLE_SAVE';
 
 
 
@@ -37,6 +39,9 @@ function reducer(state = initialState, action) {
         case UPDATE_ICE_CREAM_TYPE:
             return Object.assign({}, state, { iceCream: action.payload });
 
+        // case HANDLE_SAVE:
+        //     return Object.assign({}, state, { party: action.payload });
+
         default: return state;
     }
 }
@@ -52,6 +57,21 @@ export function getUserInfo() {
             payload: userData
             }
 }
+
+// export function handleSave() {
+//     const party = axios.post('/api/updateInfo')
+//     .then(console.log(party));
+        
+//         return {
+//             type: HANDLE_SAVE,
+//             payload: {
+//                 birthday,
+//                 color,
+//                 cake,
+//                 iceCream
+//             }
+//         }
+//     }
 
 export function updateBirthdayType( birthday ) {
     return {
