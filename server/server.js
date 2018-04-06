@@ -79,26 +79,37 @@ app.get('/auth/me', function(req, res) {
     }
 })
 
-app.post('/api/updateInfo', (req, res) => {
-    console.log(req.body);
+app.get('/displayProfileInfo', (req, res) => {
     const db = req.app.get('db');
-    const { birthday, color, cake, iceCream, id } = req.body;
-    db.find_session_user([req.body.id]).then(existingUser => {
-        if(!existingUser[0]) {
+    // const { birthday, color, cake, iceCream } = req.body;
+    db.view_profile([req.session.passport.user]).then((profileInfo) => {
+        res.status(200).send(profileInfo);
+    })
+})
+
+app.post('/api/updateInfo', (req, res) => {
+    console.log("req.body", req.body);
+    const db = req.app.get('db');
+    const { birthday, color, cake, iceCream } = req.body;
+    db.find_session_user([req.session.passport.user]).then((userId) => {
+        if(!userId) {
             res.redirect('http://localhost:3000')
         } else {
-            db.update_info([existingUser[0].id, req.body]).then( newUser => {
-                console.log(newUser);
-                res.status(200).send(newUser);
+            db.update_info([birthday, color, cake, iceCream, req.session.passport.user])
+            .then( newInfo => {
+                console.log("updateInfo");
+                console.log("newInfo",newInfo);
+                // res.status(200).send(newInfo);
             })
         }
     })
-
-    db.update_info([birthday, color, cake, iceCream]).then(info => {
-        console.log(info);
-        // res.status(200).send(info);
-    })
 })
+
+//     db.update_info([birthday, color, cake, iceCream, id]).then(info => {
+//         console.log(info);
+//         // res.status(200).send(info);
+//     })
+
 
 
 app.get('/auth/logout', (req, res) => {

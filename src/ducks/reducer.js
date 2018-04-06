@@ -6,18 +6,15 @@ const initialState = {
     color: '',
     cake: '',
     iceCream: ''
-    // party: {}
 }
 
 
-
 const UPDATE_USER_INFO = 'UPDATE_USER_INFO';
+// const DISPLAY_PROFILE_INFO = 'DISPLAY_PROFILE_INFO';
 const UPDATE_BIRTHDAY_TYPE = 'UPDATE_BIRTHDAY_TYPE';
 const UPDATE_COLOR_TYPE = 'UPDATE_COLOR_TYPE';
 const UPDATE_CAKE_TYPE = 'UPDATE_CAKE_TYPE';
 const UPDATE_ICE_CREAM_TYPE = 'UPDATE_ICE_CREAM_TYPE';
-// const HANDLE_SAVE = 'HANDLE_SAVE';
-
 
 
 function reducer(state = initialState, action) {
@@ -26,6 +23,9 @@ function reducer(state = initialState, action) {
 
         case UPDATE_USER_INFO + '_FULFILLED':
             return Object.assign({}, state, { user: action.payload });
+
+        // case DISPLAY_PROFILE_INFO:
+        //     return Object.assign({}, state, { profile: action.payload });
         
         case UPDATE_BIRTHDAY_TYPE:
             return Object.assign({}, state, { birthday: action.payload });
@@ -58,20 +58,15 @@ export function getUserInfo() {
             }
 }
 
-// export function handleSave() {
-//     const party = axios.post('/api/updateInfo')
-//     .then(console.log(party));
-        
+// export function displayProfileInfo() {
+//     const profileInfo = axios.get('/displayProfile').then( res => {
+//     return res.data;
+//     })
 //         return {
-//             type: HANDLE_SAVE,
-//             payload: {
-//                 birthday,
-//                 color,
-//                 cake,
-//                 iceCream
+//             type: DISPLAY_PROFILE_INFO,
+//             payload: profileInfo
 //             }
-//         }
-//     }
+// }
 
 export function updateBirthdayType( birthday ) {
     return {
