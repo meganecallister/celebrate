@@ -82,7 +82,17 @@ app.get('/auth/me', function(req, res) {
 app.post('/api/updateInfo', (req, res) => {
     console.log(req.body);
     const db = req.app.get('db');
-    const { birthday, color, cake, iceCream } = req.body;
+    const { birthday, color, cake, iceCream, id } = req.body;
+    db.find_session_user([req.body.id]).then(existingUser => {
+        if(!existingUser[0]) {
+            res.redirect('http://localhost:3000')
+        } else {
+            db.update_info([existingUser[0].id, req.body]).then( newUser => {
+                console.log(newUser);
+                res.status(200).send(newUser);
+            })
+        }
+    })
 
     db.update_info([birthday, color, cake, iceCream]).then(info => {
         console.log(info);
