@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import './Profile.css';
 import axios from 'axios';
-import { connect } from 'react-redux';
-import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
 import ProfileDisplay from './ProfileDisplay';
+import ProfileUpdate from './ProfileUpdate';
 
 class Profile extends Component {
     constructor() {
         super()
-
+        this.state = {
+            update: false
+        }
         this.handleSave = this.handleSave.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleSave() {
@@ -29,43 +31,34 @@ class Profile extends Component {
         })
     }
 
+    handleClick() {
+        this.setState({
+            update: true
+        })
+    }
+
+
     render() {
         const { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } = this.props;
+        const updateProfile = this.state.update ?
+            (
+                <div><ProfileUpdate/></div>
+            ) :
+            null
+
         return (
             <div className='profile'>
-                
-                <h2>Profile</h2>
-                <ProfileDisplay/>
-                <p>When is your birthday?</p>
-                <input type='date' onChange={ e => updateBirthdayType( e.target.value) }/>
-
-                <p>What is your favorite...</p>
-                <ul>
-                    <li>color? <input type='type' onChange={ e => updateColorType( e.target.value) }/></li>
-
-                    <li>cake? <input type='text' onChange={ e => updateCakeType( e.target.value) }/></li>
-
-                    <li>ice cream? <input type='text' onChange={ e => updateIceCreamType( e.target.value) }/></li>
-                </ul>
-                <div className='check-ice-cream'>
-                { this.props.birthday && this.props.color &&this.props.cake && this.props.iceCream
-                ?
-                <button onClick={this.handleSave}>Save</button>
-                : null }
+                <div className='body'>
+                    <h2>Profile</h2>
+                    <ProfileDisplay/>
+                    <button onClick={this.handleClick}>Update</button>
+                    <div className='popup'>
+                        {updateProfile}
+                    </div>
                 </div>
             </div>
         ) 
     }
 }
 
-function mapStateToProps( state ) {
-    const { birthday, color, cake, iceCream } = state;
-
-    return {
-        birthday,
-        color,
-        cake,
-        iceCream
-    }
-}
-export default connect( mapStateToProps, { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType })(Profile);
+export default Profile;

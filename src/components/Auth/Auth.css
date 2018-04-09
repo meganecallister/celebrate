@@ -23,7 +23,7 @@ h1 {
     background-color: white;
     font-family: 'Dancing Script', cursive;
     color: rgb(229, 124, 255);
-    /* text-shadow: 2px 2px 5px gray; */
+    text-shadow: 2px 2px 5px gray;
     font-size: 140px;
     margin: 0;
     text-decoration: none!important;

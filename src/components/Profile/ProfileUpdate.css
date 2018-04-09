@@ -1,0 +1,15 @@
+.profile-update {
+    background: red;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+/* 
+.popup {
+    background: blue;
+    height: 500px;
+    width: 500px;
+} */

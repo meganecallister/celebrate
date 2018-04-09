@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './Profile.css';
 import axios from 'axios';
-import { connect } from 'react-redux';
-// import { getProfileInfo } from '../../ducks/reducer';
+// import { connect } from 'react-redux';
 
 export default class ProfileDisplay extends Component {
     constructor() {
@@ -22,7 +21,7 @@ export default class ProfileDisplay extends Component {
         .catch(err => {console.log(err);})
     }
 
-
+    
     render() {
         let preferences = this.state.profileInfo.map( (e, i) => {
             return (
@@ -44,13 +43,3 @@ export default class ProfileDisplay extends Component {
         )
     }
 }
-
-
-// function mapStateToProps(state) {
-//     return {
-//         state,
-//         user: state.user
-//     }
-// }
-    
-// export default connect(mapStateToProps, (ProfileDisplay));
