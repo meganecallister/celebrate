@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Roboto');
 
 .auth {
-    /* font-family: 'Raleway', sans-serif; */
     font-family: 'Dancing Script', cursive;
     background-color: gray;
     margin: 0;
@@ -23,13 +22,15 @@ h1 {
     background-color: white;
     font-family: 'Dancing Script', cursive;
     color: rgb(229, 124, 255);
-    text-shadow: 2px 2px 5px gray;
+    /* text-shadow: 2px 2px 5px gray; */
     font-size: 140px;
     margin: 0;
     text-decoration: none!important;
 }
-img {
-    width: 100%;
+.logo {
+    width: 60%;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px white;
 }
 .right-side {
     background: linear-gradient(rgb(229, 124, 255), rgb(253, 244, 255));
@@ -46,7 +47,7 @@ img {
     margin: 20px;
 }
 .auth-button {
-    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Roboto', sans-serif;
     background-color: white;
     font-size: 20px;
     height: 50px;

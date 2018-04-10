@@ -37,7 +37,6 @@ class Profile extends Component {
         })
     }
 
-
     render() {
         const { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } = this.props;
         const updateProfile = this.state.update ?

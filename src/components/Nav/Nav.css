@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Roboto');
 
 .nav {
     background-color: #2d2d2d;
@@ -24,7 +24,7 @@
 .link-button {
     background: #2d2d2d;
     color: rgb(246, 209, 255);
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     margin-right: 10px;
     height: 40px;

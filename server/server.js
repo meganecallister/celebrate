@@ -105,13 +105,6 @@ app.post('/api/updateInfo', (req, res) => {
     })
 })
 
-//     db.update_info([birthday, color, cake, iceCream, id]).then(info => {
-//         console.log(info);
-//         // res.status(200).send(info);
-//     })
-
-
-
 app.get('/auth/logout', (req, res) => {
     req.logOut();
     res.redirect('http://localhost:3000/')

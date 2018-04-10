@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import './Profile.css';
+import './Friends.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
+import { updateFriendsList } from '../../ducks/reducer';
 
-class ProfileUpdate extends Component {
+class FriendsChange extends Component {
     constructor() {
         super()
     }
@@ -12,7 +12,7 @@ class ProfileUpdate extends Component {
     render() {
         return (
             <div className='profile-update'>
-                <div className='popup'>
+                {/* <div className='popup'>
 
                     <p>When is your birthday?</p>
                     <input type='date' onChange={ e => updateBirthdayType( e.target.value) }/>
@@ -24,25 +24,22 @@ class ProfileUpdate extends Component {
                     <p>ice cream? <input type='text' onChange={ e => updateIceCreamType( e.target.value) }/></p>
                 
                     <div>
-                        { this.props.birthday && this.props.color && this.props.cake && this.props.iceCream
+                        { this.props.birthday && this.props.color &&this.props.cake && this.props.iceCream
                         ?
                         <button onClick={this.handleSave}>Save</button>
                         : null }
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }
 }
 
 function mapStateToProps( state ) {
-    const { birthday, color, cake, iceCream } = state;
+    const { friends } = state;
 
     return {
-        birthday,
-        color,
-        cake,
-        iceCream
+        friends
     }
 }
-export default connect( mapStateToProps, { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType })(ProfileUpdate);
+export default connect( mapStateToProps, { updateFriendsList })(FriendsChange);

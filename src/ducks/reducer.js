@@ -5,12 +5,13 @@ const initialState = {
     birthday: '',
     color: '',
     cake: '',
-    iceCream: ''
+    iceCream: '',
+    friends: [],
 }
 
 
 const UPDATE_USER_INFO = 'UPDATE_USER_INFO';
-// const DISPLAY_PROFILE_INFO = 'DISPLAY_PROFILE_INFO';
+const UPDATE_FRIENDS_LIST = 'UPDATE_FRIENDS_LIST';
 const UPDATE_BIRTHDAY_TYPE = 'UPDATE_BIRTHDAY_TYPE';
 const UPDATE_COLOR_TYPE = 'UPDATE_COLOR_TYPE';
 const UPDATE_CAKE_TYPE = 'UPDATE_CAKE_TYPE';
@@ -24,8 +25,8 @@ function reducer(state = initialState, action) {
         case UPDATE_USER_INFO + '_FULFILLED':
             return Object.assign({}, state, { user: action.payload });
 
-        // case DISPLAY_PROFILE_INFO:
-        //     return Object.assign({}, state, { profile: action.payload });
+        case UPDATE_FRIENDS_LIST:
+            return Object.assign({}, state, { friends: action.payload });
         
         case UPDATE_BIRTHDAY_TYPE:
             return Object.assign({}, state, { birthday: action.payload });
@@ -38,9 +39,6 @@ function reducer(state = initialState, action) {
 
         case UPDATE_ICE_CREAM_TYPE:
             return Object.assign({}, state, { iceCream: action.payload });
-
-        // case HANDLE_SAVE:
-        //     return Object.assign({}, state, { party: action.payload });
 
         default: return state;
     }
@@ -58,15 +56,12 @@ export function getUserInfo() {
             }
 }
 
-// export function displayProfileInfo() {
-//     const profileInfo = axios.get('/displayProfile').then( res => {
-//     return res.data;
-//     })
-//         return {
-//             type: DISPLAY_PROFILE_INFO,
-//             payload: profileInfo
-//             }
-// }
+export function updateFriendsList( friends ) {
+    return {
+        type: UPDATE_FRIENDS_LIST,
+        payload: friends
+    }
+}
 
 export function updateBirthdayType( birthday ) {
     return {
