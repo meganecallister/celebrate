@@ -9,6 +9,7 @@ import Home from '../Home/Home';
 import Profile from '../Profile/Profile';
 import Friends from '../Friends/Friends';
 import Groups from '../Groups/Groups';
+import AppBar from 'material-ui/AppBar';
 // import axios from 'axios';
 
 class Main extends Component {
@@ -59,6 +60,7 @@ class Main extends Component {
 
         return (
             <div>
+                <AppBar/>
                 <Nav/>
                 <Sidebar userDataJSX={userDataJSX}/>
                 <div className='main'>

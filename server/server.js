@@ -66,7 +66,7 @@ passport.deserializeUser((id, done) => {
 
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/main/home',
+    successRedirect: 'http://localhost:3000/#/main/profile',
     failureRedirect: 'http://localhost:3000'
 }))
 
@@ -81,7 +81,6 @@ app.get('/auth/me', function(req, res) {
 
 app.get('/displayProfileInfo', (req, res) => {
     const db = req.app.get('db');
-    // const { birthday, color, cake, iceCream } = req.body;
     db.view_profile([req.session.passport.user]).then((profileInfo) => {
         res.status(200).send(profileInfo);
     })
@@ -98,10 +97,18 @@ app.post('/api/updateInfo', (req, res) => {
             db.update_info([birthday, color, cake, iceCream, req.session.passport.user])
             .then( newInfo => {
                 console.log("updateInfo");
-                console.log("newInfo",newInfo);
+                console.log("newInfo", newInfo);
                 // res.status(200).send(newInfo);
             })
         }
+    })
+})
+
+app.get('/displayFriendsList', (req, res) => {
+    console.log(res.data);
+    const db = req.app.get('db');
+    db.view_friends().then((friendsList) => {
+        res.status(200).send(friendsList);
     })
 })
 
