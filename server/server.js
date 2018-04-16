@@ -107,7 +107,7 @@ app.post('/api/updateInfo', (req, res) => {
 app.get('/displayFriendsList', (req, res) => {
     console.log(res.data);
     const db = req.app.get('db');
-    db.view_friends().then((friendsList) => {
+    db.view_friends([req.session.passport.user]).then((friendsList) => {
         res.status(200).send(friendsList);
     })
 })

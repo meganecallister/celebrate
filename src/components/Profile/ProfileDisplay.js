@@ -17,21 +17,22 @@ export default class ProfileDisplay extends Component {
             this.setState({
                 profileInfo: res.data
             })
+            console.log(res.data.icecream)
         })
         .catch(err => {console.log(err);})
     }
 
-    
+
     render() {
         let preferences = this.state.profileInfo.map( (e, i) => {
             return (
                 <div key={i}>
-                    {console.log('preferences', e)}
+                    {/* {console.log('preferences', e)} */}
                     <h4>Birthday Preferences</h4>
                     <p>{`Birthday: ${e.birthday}`}</p>
                     <p>{`Color: ${e.color}`}</p>
                     <p>{`Cake: ${e.cake}`}</p>
-                    <p>{`Ice cream: ${e.iceCream}`}</p>
+                    <p>{`Ice cream: ${e.icecream}`}</p>
                 </div>
             )
         })

@@ -5,7 +5,7 @@ const initialState = {
     birthday: '',
     color: '',
     cake: '',
-    iceCream: '',
+    icecream: '',
     friends: [],
 }
 
@@ -38,7 +38,7 @@ function reducer(state = initialState, action) {
             return Object.assign({}, state, { cake: action.payload });
 
         case UPDATE_ICE_CREAM_TYPE:
-            return Object.assign({}, state, { iceCream: action.payload });
+            return Object.assign({}, state, { icecream: action.payload });
 
         default: return state;
     }
@@ -81,10 +81,10 @@ export function updateCakeType( cake ) {
         payload: cake
     }
 }
-export function updateIceCreamType( iceCream ) {
+export function updateIceCreamType( icecream ) {
     return {
         type: UPDATE_ICE_CREAM_TYPE,
-        payload: iceCream
+        payload: icecream
     }
 }
 

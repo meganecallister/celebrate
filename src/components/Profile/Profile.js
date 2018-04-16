@@ -3,6 +3,8 @@ import './Profile.css';
 import axios from 'axios';
 import ProfileDisplay from './ProfileDisplay';
 import ProfileUpdate from './ProfileUpdate';
+import { connect } from 'react-redux';
+import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
 
 class Profile extends Component {
     constructor() {
@@ -15,13 +17,15 @@ class Profile extends Component {
     }
 
     handleSave() {
-        const { birthday, color, cake, iceCream } = this.props;
+        console.log('trying to save')
+        console.log(this.props)
+        const { birthday, color, cake, icecream } = this.props;
 
         const body = {
                 birthday,
                 color,
                 cake,
-                iceCream
+                icecream
             }
             console.log(body);
         axios.post('/api/updateInfo', body)
@@ -41,23 +45,42 @@ class Profile extends Component {
         const { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } = this.props;
         const updateProfile = this.state.update ?
             (
-                <div><ProfileUpdate/></div>
+                <div><ProfileUpdate
+                    handleSave={this.handleSave}
+                /></div>
             ) :
             null
 
         return (
             <div className='profile'>
+
                 <div className='body'>
+
                     <h2>Profile</h2>
-                    <ProfileDisplay/>
+
+                    <ProfileDisplay
+                        handleSave={this.handleSave}/>
                     <button onClick={this.handleClick}>Update</button>
+
                     <div className='popup'>
                         {updateProfile}
                     </div>
+
                 </div>
+
             </div>
         ) 
     }
 }
 
-export default Profile;
+function mapStateToProps( state ) {
+    const { birthday, color, cake, icecream } = state;
+
+    return {
+        birthday,
+        color,
+        cake,
+        icecream
+    }
+}
+export default connect( mapStateToProps, { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType })(Profile);

@@ -20,7 +20,7 @@ class Main extends Component {
             birthday: '',
             color: '',
             cake: '',
-            iceCream: '',
+            icecream: '',
         //friends list
         //groups list
         }
@@ -43,7 +43,7 @@ class Main extends Component {
         this.setState({cake: e.target.value});
     }
     handleChangeIceCream(e) {
-        this.setState({iceCream: e.target.value});
+        this.setState({icecream: e.target.value});
     }
    
 
@@ -51,7 +51,7 @@ class Main extends Component {
         const { user } = this.props
         const userDataJSX = user.display_name ?
             (
-                <div>
+                <div className='sidebar'>
                     <img src={user.img} alt='profile pic'/>
                     <p>{user.display_name}</p>
                 </div>

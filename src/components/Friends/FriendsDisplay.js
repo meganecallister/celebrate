@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import './Friends.css';
 import axios from 'axios';
-// import { connect } from 'react-redux';
+import FontIcon from 'material-ui/FontIcon';
+
+
+
 
 export default class FriendsDisplay extends Component {
     constructor() {
@@ -22,14 +25,24 @@ export default class FriendsDisplay extends Component {
     }
 
     
+    
     render() {
         console.log('render of friendsdisplay');
         let friends = this.state.friendsList.map( (e, i) => {
             return (
                 <div key={i}>
                     {console.log('friends', e)}
-                    <h4>Friends</h4>
-                    <p>{`Name: ${e.display_name}`}</p>
+                    <p>{e.display_name}</p>
+
+                    {/* <List>
+                        <ListItem
+                        disabled={true}
+                        leftAvatar={
+                        <Avatar src="images/uxceo-128.jpg" />}>
+                            Image Avatar
+                        </ListItem>
+                        } */}
+
                     <img src={e.img}/>
                     {/* <p>{`Birthday: ${e.birthday}`}</p> */}
                     {/* <p>{`Cake: ${e.cake}`}</p>
