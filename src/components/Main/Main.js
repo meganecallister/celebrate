@@ -24,7 +24,7 @@ class Main extends Component {
     }
 
     componentDidMount() {
-        console.log('Main: the component mounted');
+        // console.log('Main: the component mounted');
         this.props.getUserInfo();
     }
 

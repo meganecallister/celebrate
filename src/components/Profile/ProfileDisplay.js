@@ -12,16 +12,15 @@ export default class ProfileDisplay extends Component {
     }
 
     componentDidMount() {
-        console.log('ProfileDisplay: the component mounted');
+        // console.log('ProfileDisplay: the component mounted');
         axios.get('/displayProfileInfo').then(res => {
             this.setState({
                 profileInfo: res.data
             })
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch(err => {console.log(err);})
     }
-
 
     render() {
         let preferences = this.state.profileInfo.map( (e, i) => {

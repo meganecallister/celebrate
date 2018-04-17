@@ -11,7 +11,7 @@ class FriendsDisplay extends Component {
     }
 
     componentDidMount() {
-        console.log('friendsList: the component mounted');
+        // console.log('friendsList: the component mounted');
         axios.get('/displayFriendsList').then(res => {
             this.setState({
                 friendsList: res.data
@@ -21,16 +21,16 @@ class FriendsDisplay extends Component {
     }
 
     render() {
-        console.log('render of friendsdisplay');
+        // console.log('render of friendsdisplay');
         let friends = this.state.friendsList.map( (e, i) => {
             return (
                 <div key={i}>
-                    {console.log('friends', e)}
+                    {/* {console.log('friends', e)} */}
                     <div onClick={this.handleView}>
                         <p>{e.display_name}</p>
                         <img src={e.img}/>
                     </div>
-                    <button>Delete</button>
+                    <button onClick={() => this.props.handleDelete(e.id)}>Delete Friend</button>
                 </div>
             )
         })

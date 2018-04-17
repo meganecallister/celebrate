@@ -72,7 +72,7 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 
 app.get('/auth/me', function(req, res) {
     if(req.user) {
-        console.log('send req.user');
+        // console.log('send req.user');
         res.status(200).send(req.user);
     } else {
         res.status(401).send('You need to log in!');
@@ -82,13 +82,13 @@ app.get('/auth/me', function(req, res) {
 app.get('/displayProfileInfo', (req, res) => {
     const db = req.app.get('db');
     db.view_profile([req.session.passport.user]).then((profileInfo) => {
-        console.log(profileInfo);
+        // console.log(profileInfo);
         res.status(200).send(profileInfo);
     })
 })
 
 app.post('/api/updateInfo', (req, res) => {
-    console.log("req.body", req.body);
+    // console.log("req.body", req.body);
     const db = req.app.get('db');
     const { birthday, color, cake, icecream } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
@@ -97,8 +97,8 @@ app.post('/api/updateInfo', (req, res) => {
         } else {
             db.update_info([birthday, color, cake, icecream, req.session.passport.user])
             .then( newInfo => {
-                console.log("updateInfo");
-                console.log("newInfo", newInfo);
+                // console.log("updateInfo");
+                // console.log("newInfo", newInfo);
                 // res.status(200).send(newInfo);
             })
         }
@@ -106,24 +106,31 @@ app.post('/api/updateInfo', (req, res) => {
 })
 
 app.get('/displayFriendsList', (req, res) => {
-    console.log(res.data);
+    // console.log(res.data);
     const db = req.app.get('db');
     db.view_friends([req.session.passport.user]).then((friendsList) => {
-        console.log(friendsList);
+        // console.log(friendsList);
         res.status(200).send(friendsList);
     })
 })
 
 app.get('/displayFriendInfo', (req, res) => {
-    console.log(res.data);
+    // console.log(res.data);
     const db = req.app.get('db');
     db.view_friend_info([req.session.passport.user]).then((friendInfo) => {
-        console.log(friendInfo);
+        // console.log(friendInfo);
         res.status(200).send(friendInfo);
     })
 })
 
-
+app.delete('/api/deleteFriend/:id', (req, res) => {
+    console.log('got to server in deleting process!')
+    const db = req.app.get('db');
+    db.delete_friend([req.session.passport.user, req.params.id]).then( newFriendList => {
+        // console.log(newFriendList);
+        res.status(200).send(newFriendList);
+    })
+})
 
 
 app.get('/auth/logout', (req, res) => {
