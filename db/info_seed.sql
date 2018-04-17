@@ -5,10 +5,12 @@ CREATE TABLE Info (
     birthday TEXT,
     color TEXT,
     cake TEXT,
-    iceCream TEXT
+    icecream TEXT
 );
 
-INSERT INTO Info ( birthday, color, cake, iceCream )
-VALUES ( '12/12/82', 'Yellow', 'Cinnamon Cake', 'Mint Chocolate Chip' ),
-('4/24/81', 'Sea Foam', 'Carrot Cake', 'French Vanilla'),
-( '5/15/85', 'Blue', 'Chocolate', 'Vanilla');
+INSERT INTO Info ( birthday, color, cake, icecream )
+VALUES ( 'fluff birthday', 'fluff color', 'fluff cake', 'fluff icecream' ),
+( 'sniffs birthday', 'sniffs color', 'sniffs cake', 'sniffs icecream' ),
+( 'nappy birthday', 'nappy color', 'nappy cake', 'nappy icecream' ),
+( '1999-02-22', 'Blue', 'Chocolate', 'Vanilla' ),
+( 'Meg birthday', 'Meg color', 'Meg cake', 'Meg icecream' );

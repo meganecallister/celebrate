@@ -1,4 +1,4 @@
 SELECT birthday, color, cake, icecream
-FROM Info i 
+FROM Info i
 JOIN Users u ON u.id = i.id
-WHERE i.id = $1;
+WHERE u.display_name = $1;

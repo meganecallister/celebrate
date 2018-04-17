@@ -1,30 +1,28 @@
-import React, {Component} from 'react';
-import './Profile.css';
+import React, { Component } from 'react';
+import './Friends.css';
 import axios from 'axios';
-// import { connect } from 'react-redux';
 
-export default class ProfileDisplay extends Component {
+class FriendInfo extends Component {
     constructor() {
         super()
         this.state = {
-            profileInfo: []
+            friendInfo: []
         };
     }
 
     componentDidMount() {
-        console.log('ProfileDisplay: the component mounted');
-        axios.get('/displayProfileInfo').then(res => {
+        console.log('friendInfo: the component mounted');
+        axios.get('/displayFriendInfo').then(res => {
             this.setState({
-                profileInfo: res.data
+                friendInfo: res.data
             })
             console.log(res.data)
         })
         .catch(err => {console.log(err);})
     }
 
-
     render() {
-        let preferences = this.state.profileInfo.map( (e, i) => {
+        let friendPreferences = this.state.friendInfo.map( (e, i) => {
             return (
                 <div key={i}>
                     {/* {console.log('preferences', e)} */}
@@ -39,8 +37,10 @@ export default class ProfileDisplay extends Component {
 
         return (
             <div>
-                { preferences }
+                { friendPreferences }
             </div>
         )
     }
 }
+
+export default FriendInfo;

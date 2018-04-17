@@ -2,34 +2,13 @@ import React, {Component} from 'react';
 import './Profile.css';
 import axios from 'axios';
 import { connect } from 'react-redux';
-// import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
+import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
 
 class ProfileUpdate extends Component {
     constructor() {
         super()
 
-        // this.handleSave = this.handleSave.bind(this);
     }
-    
-    // handleSave() {
-    //     console.log('trying to save')
-    //     console.log(this.props)
-    //     const { birthday, color, cake, icecream } = this.props;
-
-    //     const body = {
-    //             birthday,
-    //             color,
-    //             cake,
-    //             icecream
-    //         }
-    //         console.log(body);
-    //     axios.post('/api/updateInfo', body)
-    //     .then(console.log('I am trying to post...'))
-    //     .catch(err => {
-    //         console.log(err);
-    //     })
-    // }
-
 
     render() {
         console.log('props', this.props);
@@ -58,15 +37,15 @@ class ProfileUpdate extends Component {
     }
 }
 
-// function mapStateToProps( state ) {
-//     const { birthday, color, cake, icecream } = state;
+function mapStateToProps( state ) {
+    const { birthday, color, cake, icecream } = state;
 
-//     return {
-//         birthday,
-//         color,
-//         cake,
-//         icecream
-//     }
-// }
-// export default connect( mapStateToProps, { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType })(ProfileUpdate);
-export default ProfileUpdate;
+    return {
+        birthday,
+        color,
+        cake,
+        icecream
+    }
+}
+export default connect( mapStateToProps, { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType })(ProfileUpdate);
+// export default ProfileUpdate;

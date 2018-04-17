@@ -82,6 +82,7 @@ app.get('/auth/me', function(req, res) {
 app.get('/displayProfileInfo', (req, res) => {
     const db = req.app.get('db');
     db.view_profile([req.session.passport.user]).then((profileInfo) => {
+        console.log(profileInfo);
         res.status(200).send(profileInfo);
     })
 })
@@ -89,12 +90,12 @@ app.get('/displayProfileInfo', (req, res) => {
 app.post('/api/updateInfo', (req, res) => {
     console.log("req.body", req.body);
     const db = req.app.get('db');
-    const { birthday, color, cake, iceCream } = req.body;
+    const { birthday, color, cake, icecream } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
             res.redirect('http://localhost:3000')
         } else {
-            db.update_info([birthday, color, cake, iceCream, req.session.passport.user])
+            db.update_info([birthday, color, cake, icecream, req.session.passport.user])
             .then( newInfo => {
                 console.log("updateInfo");
                 console.log("newInfo", newInfo);
@@ -108,9 +109,22 @@ app.get('/displayFriendsList', (req, res) => {
     console.log(res.data);
     const db = req.app.get('db');
     db.view_friends([req.session.passport.user]).then((friendsList) => {
+        console.log(friendsList);
         res.status(200).send(friendsList);
     })
 })
+
+app.get('/displayFriendInfo', (req, res) => {
+    console.log(res.data);
+    const db = req.app.get('db');
+    db.view_friend_info([req.session.passport.user]).then((friendInfo) => {
+        console.log(friendInfo);
+        res.status(200).send(friendInfo);
+    })
+})
+
+
+
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
