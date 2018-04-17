@@ -123,12 +123,41 @@ app.get('/displayFriendInfo', (req, res) => {
     })
 })
 
-app.delete('/api/deleteFriend/:id', (req, res) => {
-    console.log('got to server in deleting process!')
+//SUPERHERO DATABASE EXAMPLE PUT
+// app.put( '/api/edit_hero/:id', ( req, res ) => {
+//     const { name, powers } = req.body
+//     const { id } = req.params
+
+//     app.get('db').edit_hero([id, name, powers])
+//         .then( () => res.status(200).send() )
+// } )
+
+//BASED ON EXAMPLES!! NOT YET FUNCTIONAL
+app.put('/api/addFriend/:id', (req, res) => {
+    console.log("req.body", req.body);
     const db = req.app.get('db');
-    db.delete_friend([req.session.passport.user, req.params.id]).then( newFriendList => {
-        // console.log(newFriendList);
-        res.status(200).send(newFriendList);
+    const { friend } = req.body;
+    db.find_session_user([req.session.passport.user]).then((userId) => {
+        if(!userId) {
+            res.redirect('http://localhost:3000')
+        } else {
+            db.update_info([birthday, color, cake, icecream, req.session.passport.user])
+            .then( newInfo => {
+                // console.log("updateInfo");
+                // console.log("newInfo", newInfo);
+                // res.status(200).send(newInfo);
+            })
+        }
+    })
+})
+
+app.delete('/api/deleteFriend/:id', (req, res) => {
+    // console.log('got to server in deleting process!')
+    // console.log('_____________>',req.session.passport.user, req.params.id);
+    const db = req.app.get('db');
+    db.delete_friend([req.session.passport.user, req.params.id]).then( (newFriendList) => {
+        console.log('delete response', newFriendList);
+        res.send(newFriendList);
     })
 })
 
