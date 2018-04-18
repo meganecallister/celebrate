@@ -1,6 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 
 .nav {
+    margin: 0;
+    width: 100%;
+}
+header {
+    background: white;
+    height: 20px;
+    width: 100%;
+    margin-top: 40px;
+}
+.navBar {
     background-color: #2d2d2d;
     height: 40px;
     width: 100vw;
@@ -8,11 +19,11 @@
     justify-content: flex-end;
     align-items: center;
     position: fixed;
-    z-index: 2;
     box-sizing: border-box;
-    /* box-shadow: 0px 1px 3px rgb(104, 104, 104); */
-    top: 150px;
+    z-index: 10;
+    top: 0;
 }
+
 .page-links {
     width: 50vw;
     height: 50px;
@@ -25,7 +36,7 @@
 .link-button {
     background: #2d2d2d;
     color: rgb(246, 209, 255);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 14px;
     margin-right: 10px;
     height: 40px;

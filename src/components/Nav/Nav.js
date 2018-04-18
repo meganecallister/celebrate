@@ -5,9 +5,7 @@ import './Nav.css';
 function Nav() {
     return (
         <div className='nav'>
-            <div className='navHeader'>
-            I'm the header!!!
-            </div>
+            
             <div className='navBar'>
 
                 <div className='page-links'>
@@ -20,7 +18,10 @@ function Nav() {
                     </a>
                 </div>
             </div>
-</div>
+            <header>
+            <img src='' alt=''/>
+            </header>
+        </div>
     )       
 }
 

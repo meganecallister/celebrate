@@ -11,22 +11,32 @@ class ProfileUpdate extends Component {
     }
 
     render() {
-        console.log('props', this.props);
         return (
             <div className='profile-update'>
-                <div className='popup'>
+              
+                <p>Birthday Info</p>
 
-                    <p>Birthday Info</p>
-
-                    <p>Birthdate: <input type='text' placeholder='Month & Day' onChange={ e => this.props.updateBirthdayType( e.target.value) }/></p>
-
-                    <p>Favorite Color: <input type='text' placeholder='Color' onChange={ e => this.props.updateColorType( e.target.value) }/></p>
-
-                    <p>Favorite Cake: 
-                        <input type='text' placeholder='Cake' onChange={ e => this.props.updateCakeType( e.target.value) }
+                    <p>Birthdate:
+                        <input
+                            type='text'
+                            placeholder='Month & Day'
+                            onChange={ e => this.props.updateBirthdayType( e.target.value) }
                         />
                     </p>
-
+                    <p>Favorite Color:
+                        <input
+                            type='text'
+                            placeholder='Color'
+                            onChange={ e => this.props.updateColorType( e.target.value) }
+                        />
+                    </p>
+                    <p>Favorite Cake: 
+                        <input
+                            type='text'
+                            placeholder='Cake'
+                            onChange={ e => this.props.updateCakeType( e.target.value) }
+                        />
+                    </p>
                     <p>Favorite Ice Cream: 
                         <input
                             type='text'
@@ -34,14 +44,10 @@ class ProfileUpdate extends Component {
                             onChange={ e => this.props.updateIceCreamType( e.target.value) }
                         />
                     </p>
-                
-                    {/* <div>
-                        { this.props.birthday && this.props.color && this.props.cake && this.props.icecream
-                        ?
-                        <button onClick={this.props.closeModal}>Submit</button>
-                        : null }
-                    </div> */}
-                </div>
+
+                    <button onClick={this.props.closeModal}>Cancel</button>
+                    <button onClick={this.props.handleSave}>Submit</button>
+
             </div>
         )
     }

@@ -11,10 +11,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
     box-sizing: border-box;
     z-index: 3;
     color: #111;
+    top: 300px;
 }
 .info {
     margin-top: 100px;

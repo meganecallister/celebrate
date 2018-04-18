@@ -1,49 +1,41 @@
 import React, {Component} from 'react';
 import './Profile.css';
 import axios from 'axios';
-import ProfileDisplay from './ProfileDisplay';
 import ProfileUpdate from './ProfileUpdate';
 import { connect } from 'react-redux';
 import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
 
 class Profile extends Component {
     constructor() {
-        super()
+        super();
         this.state = {
-            update: false
+            profileInfo: []
         }
+       
         this.handleSave = this.handleSave.bind(this);
-        this.handleClick = this.handleClick.bind(this);
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+    }
+
+    componentDidMount() {
+        axios.get('/displayProfileInfo').then(res => {
+            this.setState({
+                profileInfo: res.data
+            })
+        })
     }
 
     handleSave() {
-        console.log('trying to save')
-        console.log(this.props)
         const { birthday, color, cake, icecream } = this.props;
-
-        const body = {
-                birthday,
-                color,
-                cake,
-                icecream
-            }
-            console.log(body);
+        const { birthday, color, cake, icecream } = body;
+        
         axios.put('/api/updateInfo', body)
-        .then(console.log('I am trying to post...'))
-        .catch(err => {
-            console.log(err);
-        })
-
-        this.closeModal();
-    }
-
-    handleClick() {
-        this.setState({
-            update: true
+        .then((res) => {
+            this.closeModal();
+            this.setState({
+                profileInfo: res.data
+            })
         })
     }
+
 
     openModal = () => {
         document.getElementById('myModal').style.display = 'block';
@@ -51,47 +43,42 @@ class Profile extends Component {
 
     closeModal = () => {
         document.getElementById('myModal').style.display = 'none';
-
     }
 
+
     render() {
-        const { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } = this.props;
-        const updateProfile = this.state.update ?
-            (
-                <div><ProfileUpdate
-                    handleSave={this.handleSave}
-                    closeModal={this.closeModal}
-                /></div>
-            ) :
-            null
+        let preferences = this.state.profileInfo.map( (e, i) => {
+            return (
+                <div key={i}>
+                    <p>Birthday Preferences</p>
+                    <p>{`Birthday: ${e.birthday}`}</p>
+                    <p>{`Color: ${e.color}`}</p>
+                    <p>{`Cake: ${e.cake}`}</p>
+                    <p>{`Ice cream: ${e.icecream}`}</p>
+                </div>
+            )
+        })   
 
         return (
             <div className='profile'>
-
                 <div className='body'>
 
                     <h2>Profile</h2>
 
-                    <ProfileDisplay
-                        handleSave={this.handleSave}/>
-                    
-                    
-                    {/* <button onClick={this.handleClick}>Update</button> */}
-
+                    { preferences }
                     <button onClick={this.openModal}>Update Info</button>
+
                     <div id="myModal" style={{display: 'none'}}>
                         <div className='modal-content'>
-                            <ProfileUpdate/>
-                            <button onClick={this.closeModal}>Cancel</button>
-                            <button onClick={this.handleSave}>Submit</button>
+                            <ProfileUpdate
+                                handleSave={this.handleSave}
+                                closeModal={this.closeModal}
+                            />
+                           
                         </div>
-                    </div>
-                    <div className='popup'>
-                        {/* {updateProfile} */}
                     </div>
 
                 </div>
-
             </div>
         ) 
     }

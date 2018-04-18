@@ -10,13 +10,11 @@ class FriendInfo extends Component {
         };
     }
 
-    componentDidMount() {
-        console.log('friendInfo: the component mounted');
+    displayFriendInfo() {
         axios.get('/displayFriendInfo').then(res => {
             this.setState({
-                friendInfo: res.data
+                profileInfo: res.data
             })
-            console.log(res.data)
         })
         .catch(err => {console.log(err);})
     }
@@ -25,7 +23,6 @@ class FriendInfo extends Component {
         let friendPreferences = this.state.friendInfo.map( (e, i) => {
             return (
                 <div key={i}>
-                    {/* {console.log('preferences', e)} */}
                     <h4>Birthday Preferences</h4>
                     <p>{`Birthday: ${e.birthday}`}</p>
                     <p>{`Color: ${e.color}`}</p>
@@ -37,7 +34,12 @@ class FriendInfo extends Component {
 
         return (
             <div>
+                Friend Modal!
                 { friendPreferences }
+
+                <button onClick={this.props.closeModal}>Cancel</button>
+                <button onClick={this.props.handleSave}>Submit</button>
+
             </div>
         )
     }

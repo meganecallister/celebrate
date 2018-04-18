@@ -1,45 +1,107 @@
 import React, {Component} from 'react';
 import './Friends.css';
 import axios from 'axios';
-import FriendsDisplay from './FriendsDisplay';
-import FriendsChange from './FriendsChange';
 import FriendInfo from './FriendInfo';
 
 class Friends extends Component {
     constructor() {
         super()
         this.state = {
-            friendInfo: false
-        }
+            friendsList: [],
+            newFriend: ''
+        };
+        this.addFriend = this.addFriend.bind(this);
     }
-    
+
+    componentDidMount() {
+        axios.get('/displayFriendsList').then(res => {
+            this.setState({
+                friendsList: res.data
+            })
+        })
+        .catch(err => {console.log(err);})
+    }
+
+    handleChangeFriend(value) {
+        this.setState({
+            newFriend: value 
+        })
+    }
+
+    addFriend( id ) {
+        const body = {
+            newFriend: this.state.newFriend
+        }
+
+        axios.put(`/api/addFriend/${id}`, body)
+        .then( res => {
+            this.setState({
+                friendsList: res.data
+            })
+        })
+    }
+
+    handleDelete( id ) {
+        axios.delete(`/api/deleteFriend/${id}`)
+        .then( (res) => {
+            this.setState({
+                friendsList: res.data
+            })
+        })
+    }
+
+    openModal = ( id ) => {
+        document.getElementById('myFriendModal').style.display = 'block';
+        axios.get(friends info)
+    }
+
+    closeModal = () => {
+        document.getElementById('myFriendModal').style.display = 'none';
+    }
+
     render() {
-        const { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } = this.props;
-        const viewFriendInfo = this.state.friendInfo ?
-            (
-                <div><FriendInfo
-                    handleSave={this.handleSave}
-                /></div>
-            ) :
-            null
+            let friends = this.state.friendsList.map( (e, i) => {
+                return (
+                    <div key={i} className='each-friend'>
+                        
+                            <p>{e.display_name}</p>
+                            <img src={e.img}/>
 
+                        <button onClick={() => this.openModal(e.id)}>View Info</button>
+                        <button onClick={() => this.handleDelete(e.id)}>Delete</button>
 
+                    </div>
+                )
+            })
         return (
             <div className='friends'>
-            <div className='body'>
-                <h2>Friends</h2>
-                
-                
-                
-                {/* <button onClick={this.handleView}>Preferences</button> */}
-                <FriendsDisplay
-                // handleDelete = {this.handleDelete}
-                />
-                <div className='popup'>
-                        {/* {updateFriends} */}
+                <div className='body'>
+
+                    <h2>Friends</h2>
+     
+                    <div>
+                        <input
+                            placeholder='Name'
+                            value={this.state.newFriend}
+                            onChange={ e => this.handleChangeFriend( e.target.value) }
+                        />
+                        <button onClick={this.addFriend}>Add Friend</button>
+
+                            <div className='friendsList'>
+                                { friends }
+                            </div>
+
+                        <div id="myFriendModal" style={{display: 'none'}}>
+                            <div className='modal-content'>
+                            <FriendInfo
+                                closeModal={this.closeModal}
+                            />
+                           
+                        </div>
                     </div>
 
                 </div>
+            </div>
             </div>
         )
     }

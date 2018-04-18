@@ -92,13 +92,14 @@ app.get('/displayProfileInfo', (req, res) => {
 })
 
 app.put('/api/updateInfo', (req, res) => {
+    console.log('server: trying to update!')
     const db = req.app.get('db');
     const { birthday, color, cake, icecream } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
             res.redirect('http://localhost:3000')
         } else {
-            db.update_info([birthday, color, cake, icecream, req.session.passport.user])
+            db.update_info([birthday, color, cake, icecream, req.params.id, req.session.passport.user])
             .then( newInfo => {
                 res.send(newInfo);
             })
