@@ -14,6 +14,8 @@ class Profile extends Component {
         }
         this.handleSave = this.handleSave.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     handleSave() {
@@ -28,7 +30,7 @@ class Profile extends Component {
                 icecream
             }
             console.log(body);
-        axios.post('/api/updateInfo', body)
+        axios.put('/api/updateInfo', body)
         .then(console.log('I am trying to post...'))
         .catch(err => {
             console.log(err);
@@ -41,12 +43,24 @@ class Profile extends Component {
         })
     }
 
+    openModal = () => {
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    closeModal = () => {
+        console.log('clicked submit');
+        this.handleSave();
+        document.getElementById('myModal').style.display = 'none';
+
+    }
+
     render() {
         const { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } = this.props;
         const updateProfile = this.state.update ?
             (
                 <div><ProfileUpdate
                     handleSave={this.handleSave}
+                    closeModal={this.closeModal}
                 /></div>
             ) :
             null
@@ -60,10 +74,19 @@ class Profile extends Component {
 
                     <ProfileDisplay
                         handleSave={this.handleSave}/>
-                    <button onClick={this.handleClick}>Update</button>
+                    
+                    
+                    {/* <button onClick={this.handleClick}>Update</button> */}
 
+                    <button onClick={this.openModal}>Update Info</button>
+                    <div id="myModal" style={{display: 'none'}}>
+                        <div className='modal-content'>
+                            <ProfileUpdate/>
+                            <button onClick={this.closeModal}>Submit</button>
+                        </div>
+                    </div>
                     <div className='popup'>
-                        {updateProfile}
+                        {/* {updateProfile} */}
                     </div>
 
                 </div>

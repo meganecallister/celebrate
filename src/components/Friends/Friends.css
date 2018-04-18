@@ -2,11 +2,12 @@
 
 .friends {
     background: #F2BCFF;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    position: fixed;
 }
 h2 {
-    font-size: 80px;
+    font-size: 70px;
     text-align: center;
     margin: 0;
     padding-top: 90px;
@@ -20,9 +21,33 @@ h2 {
     margin: auto;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    overflow: auto;
 }
 .friends img {
     box-shadow: 2px 2px 5px gray;
     border-radius: 2px;
     width: 10%;
+}
+.friendsList {
+    background: blue;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+.each-friend {
+    background: red;
+    height: 200px;
+    margin: 10px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.each-friend img {
+    width: 70px;
+    /* box-shadow: none; */
+}
+.each-friend button {
+    height: 30px;
+    width: 70px;
+    margin: 5px;
 }

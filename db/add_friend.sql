@@ -12,7 +12,7 @@ VALUES ( $1, (SELECT id
                 WHERE u.display_name = $2))
 RETURNING *;
 
-SELECT u.img, u.display_name, u.id
+SELECT u.img, u.display_name
 FROM Users u
 JOIN Friends f ON f.friend_id = u.id
 WHERE f.user_id = $1;

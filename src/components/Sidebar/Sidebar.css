@@ -4,7 +4,7 @@
     background-color: #F2BCFF;
     font-family: 'Roboto', sans-serif;
     padding: 5px;
-    padding-top: 65px;
+    padding-top: 32px;
     height: 100%;
     width: 15vw;
     display: flex;
@@ -13,6 +13,7 @@
     align-items: center;
     position: fixed;
     box-sizing: border-box;
+    z-index: 4;
 }
 .info {
     display: flex;

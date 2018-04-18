@@ -9,6 +9,7 @@ class FriendsDisplay extends Component {
             friendsList: [],
             newFriend: ''
         };
+        this.addFriend = this.addFriend.bind(this);
     }
 
     componentDidMount() {
@@ -28,7 +29,7 @@ class FriendsDisplay extends Component {
             this.setState({
                 friendsList: res.data
             })
-            console.log('Delete .then statement!')
+            // console.log('Delete .then statement!')
         })
     }
 
@@ -36,21 +37,25 @@ class FriendsDisplay extends Component {
         this.setState({
             newFriend: value 
         })
-        console.log(this.state.newFriend)
+        // console.log(this.state.newFriend)
     }
 
-    addFriend( id, friend ) {
-        console.log('trying to add a friend')
-        console.log(this.state.newFriend)
-
+    addFriend( id ) {
         const body = {
-            newFriend: friend
+            newFriend: this.state.newFriend
         }
-
+        console.log(body)
         axios.put(`/api/addFriend/${id}`, body)
-        .then(console.log('I am trying to post!'))
-        .catch(err => { console.log(err);
+        .then( res => {
+            console.log('I am trying to post!', res);
+
+        this.setState({
+            friendsList: res.data
         })
+        }).catch(err => {
+            console.log(err)
+        })
+        console.log(this.state.friendsList)
     }
     
     render() {
@@ -58,13 +63,13 @@ class FriendsDisplay extends Component {
         // console.log('render of friendsdisplay');
         let friends = this.state.friendsList.map( (e, i) => {
             return (
-                <div key={i}>
+                <div key={i} className='each-friend'>
                     {/* {console.log('friends', e)} */}
                     <div onClick={this.handleView}>
                         <p>{e.display_name}</p>
                         <img src={e.img}/>
                     </div>
-                    <button onClick={() => this.handleDelete(e.id)}>Delete Friend</button>
+                    <button onClick={() => this.handleDelete(e.id)}>Delete</button>
                 </div>
             )
         })
@@ -77,9 +82,9 @@ class FriendsDisplay extends Component {
                     onChange={ e => this.handleChangeFriend( e.target.value) }
                 />
                 <button onClick={this.addFriend}>Add Friend</button>
-
-                { friends }
-
+                    <div className='friendsList'>
+                        { friends }
+                    </div>
             </div>
         )
     }

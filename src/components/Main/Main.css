@@ -1,9 +1,9 @@
 .main {
-    background: #F2BCFF;
-    padding: 100px;
-    height: 100vh;
+    background: white;
+    /* padding: 100px; */
+    height: 100%;
     width: 100%;
 }
 img {
-    box-shadow: 3px 3px 3px black;
+    /* box-shadow: 3px 3px 3px black; */
 }

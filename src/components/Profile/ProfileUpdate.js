@@ -16,19 +16,29 @@ class ProfileUpdate extends Component {
             <div className='profile-update'>
                 <div className='popup'>
 
-                    <p>When is your birthday?</p>
-                    <input type='date' onChange={ e => this.props.updateBirthdayType( e.target.value) }/>
+                    <h2>Birthday Info</h2>
 
-                    <p>color? <input type='type' onChange={ e => this.props.updateColorType( e.target.value) }/></p>
+                    <p>Birthdate: <input type='text' placeholder='Month & Day' onChange={ e => this.props.updateBirthdayType( e.target.value) }/></p>
 
-                    <p>cake? <input type='text' onChange={ e => this.props.updateCakeType( e.target.value) }/></p>
+                    <p>Favorite Color: <input type='text' placeholder='Color' onChange={ e => this.props.updateColorType( e.target.value) }/></p>
 
-                    <p>ice cream? <input type='text' onChange={ e => this.props.updateIceCreamType( e.target.value) }/></p>
+                    <p>Favorite Cake: 
+                        <input type='text' placeholder='Cake' onChange={ e => this.props.updateCakeType( e.target.value) }
+                        />
+                    </p>
+
+                    <p>Favorite Ice Cream: 
+                        <input
+                            type='text'
+                            placeholder='Ice Cream'
+                            onChange={ e => this.props.updateIceCreamType( e.target.value) }
+                        />
+                    </p>
                 
                     <div>
                         { this.props.birthday && this.props.color && this.props.cake && this.props.icecream
                         ?
-                        <button onClick={this.props.handleSave}>Save</button>
+                        <button onClick={this.props.closeModal}>Submit</button>
                         : null }
                     </div>
                 </div>
