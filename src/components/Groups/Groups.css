@@ -11,7 +11,7 @@ h2 {
     margin: 0;
     padding-top: 90px;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px 5px gray;
+    /* text-shadow: 2px 2px 5px gray; */
 }
 .body {
     background-color: white;

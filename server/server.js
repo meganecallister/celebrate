@@ -115,8 +115,11 @@ app.get('/displayFriendsList', (req, res) => {
         if(!userId) {
             res.redirect('http://localhost:3000')
         } else {
-        db.view_friends([req.session.passport.user]).then((friendsList) => {
-            res.status(200).send(friendsList);
+            db.view_friends([req.session.passport.user])
+            .then((friendsList) => {
+                res.status(200).send(friendsList);
+            })
+        }
     })
 })
 
@@ -126,22 +129,39 @@ app.get('/displayFriendInfo', (req, res) => {
         if(!userId) {
             res.redirect('http://localhost:3000')
         } else {
-        db.view_friend_info([req.session.passport.user]).then((friendInfo) => {
-            res.status(200).send(friendInfo);
+            db.view_friend_info([req.session.passport.user])
+            .then((friendInfo) => {
+                res.status(200).send(friendInfo);
+            })
+        }
     })
 })
 
 app.put('/api/addFriend/:id', (req, res) => {
     const db = req.app.get('db');
-    db.add_friend([req.session.passport.user, req.body.newFriend]).then((addedFriendList) => {
-        res.send(addedFriendList);
+    db.find_session_user([req.session.passport.user]).then((userId) => {
+        if(!userId) {
+            res.redirect('http://localhost:3000')
+        } else {
+            db.add_friend([req.session.passport.user, req.body.newFriend])
+            .then((addedFriendList) => {
+                res.send(addedFriendList);
+            })
+        }
     })
 })
 
 app.delete('/api/deleteFriend/:id', (req, res) => {
     const db = req.app.get('db');
-    db.delete_friend([req.session.passport.user, req.params.id]).then( (newFriendList) => {
-        res.send(newFriendList);
+    db.find_session_user([req.session.passport.user]).then((userId) => {
+        if(!userId) {
+            res.redirect('http://localhost:3000')
+        } else {
+            db.delete_friend([req.session.passport.user, req.params.id])
+            .then( (newFriendList) => {
+                res.send(newFriendList);
+            })
+        }
     })
 })
 

@@ -4,15 +4,15 @@
     background: #F2BCFF;
     height: 100%;
     width: 100%;
-    position: fixed;
 }
 h2 {
     font-size: 70px;
     text-align: center;
     margin: 0;
+    height: px;
     padding-top: 90px;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px 5px gray;
+    /* text-shadow: 2px 2px 5px gray; */
 }
 .body {
     background-color: #eee;

@@ -16,7 +16,7 @@ class ProfileUpdate extends Component {
             <div className='profile-update'>
                 <div className='popup'>
 
-                    <h2>Birthday Info</h2>
+                    <p>Birthday Info</p>
 
                     <p>Birthdate: <input type='text' placeholder='Month & Day' onChange={ e => this.props.updateBirthdayType( e.target.value) }/></p>
 
@@ -35,12 +35,12 @@ class ProfileUpdate extends Component {
                         />
                     </p>
                 
-                    <div>
+                    {/* <div>
                         { this.props.birthday && this.props.color && this.props.cake && this.props.icecream
                         ?
                         <button onClick={this.props.closeModal}>Submit</button>
                         : null }
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )

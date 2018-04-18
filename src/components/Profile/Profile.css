@@ -4,14 +4,17 @@
     background: #F2BCFF;
     height: 100%;
     width: 100%;
+    
 }
 h2 {
+    background: pink;
     font-size: 70px;
     text-align: center;
     margin: 0;
     padding-top: 90px;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px 5px gray;
+    /* text-shadow: 2px 2px 5px gray; */
+
 }
 .body {
     background-color: white;
@@ -19,16 +22,24 @@ h2 {
     width: 70vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
-    box-shadow: 2px 2px 5px gray;
+    /* box-shadow: 2px 2px 5px gray; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 img {
-    box-shadow: 2px 2px 5px gray;
+    /* box-shadow: 2px 2px 5px gray; */
     border-radius: 3px;
 }
 .popup {
     /* background: blue; */
     height: 500px;
     width: 500px;
+}
+.body button {
+    height: 40px;
+    width: 100px;
+    margin: auto;
 }
 #myModal {
     background: rgba(70, 70, 70, .5);

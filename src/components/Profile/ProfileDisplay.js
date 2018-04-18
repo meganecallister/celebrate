@@ -27,7 +27,7 @@ export default class ProfileDisplay extends Component {
             return (
                 <div key={i}>
                     {/* {console.log('preferences', e)} */}
-                    <h4>Birthday Preferences</h4>
+                    <p>Birthday Preferences</p>
                     <p>{`Birthday: ${e.birthday}`}</p>
                     <p>{`Color: ${e.color}`}</p>
                     <p>{`Cake: ${e.cake}`}</p>

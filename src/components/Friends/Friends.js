@@ -13,8 +13,6 @@ class Friends extends Component {
         }
     }
     
-
-
     render() {
         const { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } = this.props;
         const viewFriendInfo = this.state.friendInfo ?

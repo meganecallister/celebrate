@@ -10,7 +10,7 @@
 .logo {
     width: 30%;
     border-radius: 50%;
-    box-shadow: 2px 2px 5px white;
+    /* box-shadow: 2px 2px 5px white; */
     margin: auto;
     margin-top: 50px;
 }

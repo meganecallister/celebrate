@@ -35,6 +35,8 @@ class Profile extends Component {
         .catch(err => {
             console.log(err);
         })
+
+        this.closeModal();
     }
 
     handleClick() {
@@ -48,8 +50,6 @@ class Profile extends Component {
     }
 
     closeModal = () => {
-        console.log('clicked submit');
-        this.handleSave();
         document.getElementById('myModal').style.display = 'none';
 
     }
@@ -82,7 +82,8 @@ class Profile extends Component {
                     <div id="myModal" style={{display: 'none'}}>
                         <div className='modal-content'>
                             <ProfileUpdate/>
-                            <button onClick={this.closeModal}>Submit</button>
+                            <button onClick={this.closeModal}>Cancel</button>
+                            <button onClick={this.handleSave}>Submit</button>
                         </div>
                     </div>
                     <div className='popup'>
