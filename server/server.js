@@ -64,13 +64,15 @@ passport.deserializeUser((id, done) => {
     })
 })
 
+app.use( express.static( `${__dirname}/../build` ) );
+
 
 //============== AUTH ==============//
 
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/main/profile',
-    failureRedirect: 'http://localhost:3000'
+    successRedirect: process.env.SUCCESS_REDIRECT,
+    failureRedirect: process.env.FAILURE_REDIRECT
 }))
 
 app.get('/auth/me', function(req, res) {
@@ -91,7 +93,7 @@ app.get('/displayProfileInfo', (req, res) => {
     })
 })
 //trying a post, lolz
-app.post('/api/updateInfo/:id', (req, res) => {
+app.post('/api/updateInfo', (req, res) => {
     console.log('server: trying to update!')
     console.log('req.params', req.params)
     console.log('req.params.id', req.params.id)
@@ -99,17 +101,17 @@ app.post('/api/updateInfo/:id', (req, res) => {
     const { birthday, color, cake, icecream } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect('http://localhost:3000')
+            res.redirect(FAILURE_REDIRECT)
             console.log('server: could not find an id...')
         } else {
-            db.find_info([req.params.id]).then( infoResult => {
-                if(!infoResult[0]) {
-                    console.log('server: could not find info so I am adding some')
-                    console.log('server 106', req.params.id, req.body)
-                    db.create_info([birthday, color, cake, icecream]).then( createdInfo => {
-                        res.send(createdInfo)
-                    })
-                } else {
+            // db.find_info([req.params.id]).then( infoResult => {
+            //     if(!infoResult[0]) {
+            //         console.log('server: could not find info so I am adding some')
+            //         console.log('server 106', req.params.id, req.body)
+            //         db.create_info([birthday, color, cake, icecream]).then( createdInfo => {
+            //             res.send(createdInfo)
+            //         })
+            //     } else {
                     db.update_info([birthday, color, cake, icecream, req.params.id, req.session.passport.user])
                     .then( newInfo => {
                         console.log('newInfo ==>', newInfo)
@@ -118,9 +120,9 @@ app.post('/api/updateInfo/:id', (req, res) => {
                     })
                 }
             })
-        }
+        // }
     })
-})
+// })
 
 //===============   FRIENDS   =============//
 
@@ -128,7 +130,7 @@ app.get('/displayFriendsList', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect('http://localhost:3000')
+            res.redirect(FAILURE_REDIRECT)
         } else {
             db.view_friends([req.session.passport.user])
             .then((friendsList) => {
@@ -142,7 +144,7 @@ app.get('/api/displayFriendInfo/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect('http://localhost:3000')
+            res.redirect(FAILURE_REDIRECT)
         } else {
             db.view_friend_info([req.session.passport.user, req.params.id])
             .then((friendInfo) => {
@@ -157,7 +159,7 @@ app.put('/api/addFriend/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect('http://localhost:3000')
+            res.redirect(FAILURE_REDIRECT)
         } else {
             db.add_friend([req.session.passport.user, req.body.newFriend])
             .then((addedFriendList) => {
@@ -171,7 +173,7 @@ app.delete('/api/deleteFriend/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect('http://localhost:3000')
+            res.redirect(FAILURE_REDIRECT)
         } else {
             db.delete_friend([req.session.passport.user, req.params.id])
             .then( (newFriendList) => {
@@ -188,7 +190,12 @@ app.delete('/api/deleteFriend/:id', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect('http://localhost:3000/')
+    res.redirect(FAILURE_REDIRECT)
 })
+
+// In case we used browser history?
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 app.listen(SERVER_PORT, () => {console.log(`${SERVER_PORT} bunnies hopping down Center Street.`)})

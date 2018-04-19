@@ -4,8 +4,27 @@
     margin: 0;
     width: 100%;
 }
+menu {
+    background-color: white;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 10;
+    top: 0;
+    box-shadow: 2px 2px 2px #ddd;
+    margin: 0;
+}
+menu img {
+    width: 38px;
+}
+a {
+    text-decoration: none;
+}
 header {
-
     height: 300px;
     width: 100%;
     overflow: hidden;
@@ -22,31 +41,31 @@ img {
     width: 100%;
 }
 .navBar {
-    background-color: #2d2d2d;
+    background-color: white;
     height: 40px;
-    width: 100vw;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    /* padding-right: 15vw; */
     align-items: center;
-    position: fixed;
+    /* position: fixed; */
     box-sizing: border-box;
     z-index: 10;
-    top: 0;
+    /* top: 0; */
+    box-shadow: 2px 2px 2px #ddd;
 }
 
 .page-links {
-    width: 50vw;
+    width: 40vw;
     height: 50px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
-    padding-right: 20px;
+    /* padding-right: 15vw; */
 }
-
 .link-button {
-    background: #2d2d2d;
-    color: white;    
-
+    background: white;
+    color: black;    
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     margin-right: 10px;
@@ -57,7 +76,7 @@ img {
     justify-content: flex-start;
 }
 .link-button:hover {
-    color: #F2BCFF;
+    background: #F2BCFF;
 }
 .link-button:visited {
     color: rgb(235, 153, 255);

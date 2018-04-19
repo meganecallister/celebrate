@@ -23,12 +23,12 @@ class Profile extends Component {
         })
     }
 //trying a post, lolz
-    handleSave( id ) {
+    handleSave() {
         const { birthday, color, cake, icecream } = this.props;
         const body = { birthday, color, cake, icecream }
         console.log(body)
         console.log('profileInfo:', this.state.profileInfo)
-        axios.post(`/api/updateInfo/${id}`, body)
+        axios.post('/api/updateInfo/', body)
         .then((res) => {
             this.closeModal();
             this.setState({

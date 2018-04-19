@@ -7,13 +7,14 @@
     margin: auto;
 }
 .friends h2 {
-    font-size: 70px;
+    background: #eee;
+    font-size: 50px;
     margin: auto;
     text-align: center;
     font-family: 'Dancing Script', cursive;
 }
 .friends .body {
-    background-color: black;
+    background-color: #bbb;
     height: 100%;
     width: 60vw;
     margin: auto;
@@ -24,13 +25,13 @@
 
 
 .friendsList {
-    background: blue;
+    background: #777;
     display: flex;
     flex-wrap: wrap;
     margin: 50px;
 }
 .each-friend {
-    background: red;
+    background: #555;
     height: 200px;
     margin: 10px;    
     display: flex;
