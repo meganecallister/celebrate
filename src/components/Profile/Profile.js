@@ -37,22 +37,6 @@ class Profile extends Component {
         })
     }
 
-
-    // addFriend( id ) {
-    //     const body = {
-    //         newFriend: this.state.newFriend
-    //     }
-
-    //     axios.put(`/api/addFriend/${id}`, body)
-    //     .then( res => {
-    //         this.setState({
-    //             friendsList: res.data
-    //         })
-    //     })
-    // }
-
-
-
     openModal = () => {
         document.getElementById('myModal').style.display = 'block';
     }
@@ -77,11 +61,9 @@ class Profile extends Component {
 
         return (
             <div className='profile'>
-                  <h2>Profile</h2>
-
+            
                 <div className='body'>
 
-  
 
                     { preferences }
                     <button onClick={this.openModal}>Update Info</button>

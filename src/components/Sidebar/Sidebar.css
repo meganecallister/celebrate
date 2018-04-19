@@ -2,7 +2,7 @@
 
 .sidebar {
     background-color: rgba(255, 255, 255, 0);
-    /* background: blue; */
+    background: blue;
     font-family: 'Roboto', sans-serif;
     height: 100%;
     width: 15vw;
@@ -10,19 +10,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    box-sizing: border-box;
-    z-index: 5;
+    z-index: 11;
     color: #111;
-    position: absolute;
-    top: 130px;
-}
-.sidebar .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    position: fixed;
 }
 .sidebar img {
     width: 14vw;
-    
+    border-radius: 50%;
 }

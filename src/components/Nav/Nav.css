@@ -3,54 +3,41 @@
 .nav {
     margin: 0;
     width: 100%;
-}
-menu {
-    background-color: white;
-    height: 40px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    box-sizing: border-box;
-    z-index: 10;
     top: 0;
-    box-shadow: 2px 2px 2px #ddd;
-    margin: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 9;
+    position: relative;
 }
-menu img {
-    width: 38px;
-}
+
 a {
     text-decoration: none;
 }
 header {
-    height: 300px;
+    height: 20vh;
     width: 100%;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* padding-bottom: 100px; */
     box-sizing: border-box;
-    z-index: 3px;
     top: 0;
+    left: 0;
+    z-index: 2;
 }
-img {
-    top: 0;
-    width: 100%;
+
+.nav img {
+    min-width: 1200px;
 }
 .navBar {
     background-color: white;
-    height: 40px;
+    height: 35px;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    /* padding-right: 15vw; */
+    justify-content: space-between;
+    padding-left: 15vw;
     align-items: center;
     /* position: fixed; */
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 9;
     /* top: 0; */
     box-shadow: 2px 2px 2px #ddd;
 }
@@ -61,23 +48,29 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    /* padding-right: 15vw; */
+    padding-left: 20px;
+    margin-right: 10px;
 }
-.link-button {
+.nav button { 
     background: white;
-    color: black;    
+    color: black; 
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
-    margin-right: 10px;
-    height: 40px;
+    box-sizing: border-box;
+    height: 35px;
     border: none;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
-.link-button:hover {
+/* .nav button {
+    background: blue;
+    margin-left: 20px;
+    margin-right: 10px;
+} */
+.nav button:hover {
     background: #F2BCFF;
 }
-.link-button:visited {
+.nav button:visited {
     color: rgb(235, 153, 255);
 }

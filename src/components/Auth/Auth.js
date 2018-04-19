@@ -1,18 +1,19 @@
 import React from 'react';
 import './Auth.css';
-import cupcake from '../../cupcake-logo.png';
+import party from '../../party-background.jpg';
 
 export default function Auth() {
     return (
         <div className='auth'>
-        <menu>
+        
+<div className='stuff'>
+            <h1>Celebrate</h1>
             <a href={ process.env.REACT_APP_LOGIN }>
-                <button className='link-button'>Log in</button>
+                <button className='link-button'>LOGIN</button>
             </a>
-        </menu>
-                <h1>Celebrate</h1>
-                <img src={cupcake} alt='delicious chocolate cupcake'/>
-                <p className='catch-phrase'>Join us in celebrating the lives of others.</p>
+            </div>
+            <img src={party} alt='bright watercolor background'/>
+
         </div>
     )    
 }

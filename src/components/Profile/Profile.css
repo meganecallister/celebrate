@@ -7,17 +7,7 @@
     margin: auto;
     box-sizing: border-box;
 }
-.profile h2 {
-    background: pink;
-    font-size: 70px;
-    text-align: center;
-    margin: auto;
-    width: 60vw;
-    font-family: 'Dancing Script', cursive;
-    /* text-shadow: 2px 2px 5px gray; */
-    box-sizing: border-box;
 
-}
 .profile .body {
     background-color: white;
     height: 100%;
@@ -40,10 +30,10 @@ img {
     margin: auto;
 }
 #myModal {
-    background: rgba(70, 70, 70, .5);
+    background: rgba(0, 0, 0, 0.5);
     height: 100%;
     width: 100%;
-    z-index: 10px;
+    z-index: 100;
     position: absolute;
     top: 0;
     left: 0;
@@ -56,5 +46,50 @@ img {
     left: 25%;
     position: absolute;
     z-index: 11px;
-    border-radius: 5px;  
+    border-radius: 5px;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-update {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.close-profile-modal {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.modal-content button {
+    background: pink;
+    height: 35px;
+    margin: 8px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #777;
+
+}
+
+.profile .title {
+    font-size: 30px;
+    margin: 0;
+}
+.profile-inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+.profile input {
+    height: 25px;
+    width: 250px;
+    margin: 8px auto;
+    font-size: 16px;
 }

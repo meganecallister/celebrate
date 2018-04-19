@@ -14,40 +14,33 @@ class ProfileUpdate extends Component {
         return (
             <div className='profile-update'>
               
-                <p>Birthday Info</p>
-
-                    <p>Birthdate:
+                <p className='title'>Update Info</p>
+            <div className='profile-inputs'>
                         <input
                             type='text'
-                            placeholder='Month & Day'
+                            placeholder='Birth Month & Day'
                             onChange={ e => this.props.updateBirthdayType( e.target.value) }
                         />
-                    </p>
-                    <p>Favorite Color:
                         <input
                             type='text'
                             placeholder='Color'
                             onChange={ e => this.props.updateColorType( e.target.value) }
                         />
-                    </p>
-                    <p>Favorite Cake: 
                         <input
                             type='text'
                             placeholder='Cake'
                             onChange={ e => this.props.updateCakeType( e.target.value) }
                         />
-                    </p>
-                    <p>Favorite Ice Cream: 
                         <input
                             type='text'
                             placeholder='Ice Cream'
                             onChange={ e => this.props.updateIceCreamType( e.target.value) }
                         />
-                    </p>
-
+                        </div>
+                <div className='close-profile-modal'>
                     <button onClick={this.props.closeModal}>Cancel</button>
                     <button onClick={this.props.handleSave}>Submit</button>
-
+                </div>
             </div>
         )
     }

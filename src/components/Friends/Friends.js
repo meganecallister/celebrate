@@ -83,7 +83,6 @@ class Friends extends Component {
 
         return (
             <div className='friends'>
-                {/* <h2>Friends</h2> */}
                 <div className='body'>
                     <div>
                         <input
