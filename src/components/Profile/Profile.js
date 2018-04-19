@@ -22,12 +22,13 @@ class Profile extends Component {
             })
         })
     }
-
-    handleSave() {
+//trying a post, lolz
+    handleSave( id ) {
         const { birthday, color, cake, icecream } = this.props;
         const body = { birthday, color, cake, icecream }
-
-        axios.put('/api/updateInfo', body)
+        console.log(body)
+        console.log('profileInfo:', this.state.profileInfo)
+        axios.post(`/api/updateInfo/${id}`, body)
         .then((res) => {
             this.closeModal();
             this.setState({
@@ -35,6 +36,21 @@ class Profile extends Component {
             })
         })
     }
+
+
+    // addFriend( id ) {
+    //     const body = {
+    //         newFriend: this.state.newFriend
+    //     }
+
+    //     axios.put(`/api/addFriend/${id}`, body)
+    //     .then( res => {
+    //         this.setState({
+    //             friendsList: res.data
+    //         })
+    //     })
+    // }
+
 
 
     openModal = () => {

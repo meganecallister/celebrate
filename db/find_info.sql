@@ -1,0 +1,3 @@
+SELECT *
+FROM Info
+WHERE id = $1;

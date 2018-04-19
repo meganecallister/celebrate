@@ -90,23 +90,37 @@ app.get('/displayProfileInfo', (req, res) => {
         res.status(200).send(profileInfo);
     })
 })
-
-app.put('/api/updateInfo', (req, res) => {
+//trying a post, lolz
+app.post('/api/updateInfo/:id', (req, res) => {
     console.log('server: trying to update!')
+    console.log('req.params', req.params)
+    console.log('req.params.id', req.params.id)
     const db = req.app.get('db');
     const { birthday, color, cake, icecream } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
             res.redirect('http://localhost:3000')
+            console.log('server: could not find an id...')
         } else {
-            db.update_info([birthday, color, cake, icecream, req.params.id, req.session.passport.user])
-            .then( newInfo => {
-                res.send(newInfo);
+            db.find_info([req.params.id]).then( infoResult => {
+                if(!infoResult[0]) {
+                    console.log('server: could not find info so I am adding some')
+                    console.log('server 106', req.params.id, req.body)
+                    db.create_info([birthday, color, cake, icecream]).then( createdInfo => {
+                        res.send(createdInfo)
+                    })
+                } else {
+                    db.update_info([birthday, color, cake, icecream, req.params.id, req.session.passport.user])
+                    .then( newInfo => {
+                        console.log('newInfo ==>', newInfo)
+                        console.log('Oh I know you I am adding the updates')
+                        res.send(newInfo);
+                    })
+                }
             })
         }
     })
 })
-
 
 //===============   FRIENDS   =============//
 
