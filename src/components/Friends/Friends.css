@@ -6,15 +6,8 @@
     width: 70vw;
     margin: auto;
 }
-.friends h2 {
-    background: #eee;
-    font-size: 50px;
-    margin: auto;
-    text-align: center;
-    font-family: 'Dancing Script', cursive;
-}
 .friends .body {
-    background-color: #bbb;
+    background-color: red;
     height: 100%;
     width: 60vw;
     margin: auto;

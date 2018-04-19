@@ -46,7 +46,7 @@ class Main extends Component {
         const { user } = this.props
         const userDataJSX = user.display_name ?
             (
-                <div className='sidebar'>
+                <div className='info'>
                     <img src={user.img} alt='profile pic'/>
                     <p>{user.display_name}</p>
                 </div>
@@ -55,8 +55,7 @@ class Main extends Component {
 
         return (
             <div>
-                {/* <AppBar/> */}
-                <Nav/>
+                <Nav userDataJSX={userDataJSX} />
                 <Sidebar userDataJSX={userDataJSX}/>
                 <div className='main'>
                     <Switch>
