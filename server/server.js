@@ -101,7 +101,7 @@ app.post('/api/updateInfo', (req, res) => {
     const { birthday, color, cake, icecream } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect(FAILURE_REDIRECT)
+            res.redirect(process.env.FAILURE_REDIRECT)
             console.log('server: could not find an id...')
         } else {
             // db.find_info([req.params.id]).then( infoResult => {
@@ -130,7 +130,7 @@ app.get('/displayFriendsList', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect(FAILURE_REDIRECT)
+            res.redirect(process.env.FAILURE_REDIRECT)
         } else {
             db.view_friends([req.session.passport.user])
             .then((friendsList) => {
@@ -144,7 +144,7 @@ app.get('/api/displayFriendInfo/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect(FAILURE_REDIRECT)
+            res.redirect(process.env.FAILURE_REDIRECT)
         } else {
             db.view_friend_info([req.session.passport.user, req.params.id])
             .then((friendInfo) => {
@@ -159,7 +159,7 @@ app.put('/api/addFriend/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect(FAILURE_REDIRECT)
+            res.redirect(process.env.FAILURE_REDIRECT)
         } else {
             db.add_friend([req.session.passport.user, req.body.newFriend])
             .then((addedFriendList) => {
@@ -173,7 +173,7 @@ app.delete('/api/deleteFriend/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
-            res.redirect(FAILURE_REDIRECT)
+            res.redirect(process.env.FAILURE_REDIRECT)
         } else {
             db.delete_friend([req.session.passport.user, req.params.id])
             .then( (newFriendList) => {
@@ -190,7 +190,7 @@ app.delete('/api/deleteFriend/:id', (req, res) => {
 
 app.get('/auth/logout', (req, res) => {
     req.logOut();
-    res.redirect(FAILURE_REDIRECT)
+    res.redirect(process.env.FAILURE_REDIRECT)
 })
 
 // In case we used browser history?
