@@ -5,7 +5,7 @@
     height: 100vh;
     width: 100%;
 }
-h2 {
+.groups h2 {
     font-size: 70px;
     text-align: center;
     margin: 0;
@@ -13,7 +13,7 @@ h2 {
     font-family: 'Dancing Script', cursive;
     /* text-shadow: 2px 2px 5px gray; */
 }
-.body {
+.groups .body {
     background-color: white;
     height: 100vh;
     width: 70vw;

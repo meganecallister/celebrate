@@ -2,29 +2,27 @@
 
 .sidebar {
     background-color: rgba(255, 255, 255, 0);
+    /* background: blue; */
     font-family: 'Roboto', sans-serif;
-    /* padding: 5px;
-    padding-top: 3px; */
     height: 100%;
     width: 15vw;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    /* position: fixed; */
     box-sizing: border-box;
-    z-index: 3;
+    z-index: 5;
     color: #111;
-    top: 300px;
+    position: absolute;
+    top: 130px;
 }
-.info {
-    margin-top: 100px;
+.sidebar .info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
-img {
-    width: 100%;
- 
-    /* box-shadow: none; */
+.sidebar img {
+    width: 14vw;
+    
 }

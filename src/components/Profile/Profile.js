@@ -61,9 +61,11 @@ class Profile extends Component {
 
         return (
             <div className='profile'>
+                  <h2>Profile</h2>
+
                 <div className='body'>
 
-                    <h2>Profile</h2>
+  
 
                     { preferences }
                     <button onClick={this.openModal}>Update Info</button>

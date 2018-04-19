@@ -6,13 +6,13 @@
     width: 70vw;
     margin: auto;
 }
-h2 {
+.friends h2 {
     font-size: 70px;
     margin: auto;
     text-align: center;
     font-family: 'Dancing Script', cursive;
 }
-.body {
+.friends .body {
     background-color: black;
     height: 100%;
     width: 60vw;

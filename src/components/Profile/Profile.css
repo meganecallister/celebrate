@@ -3,20 +3,22 @@
 .profile {
     background: #F2BCFF;
     height: 100%;
-    width: 100%;
-    
+    width: 68vw;
+    margin: auto;
+    box-sizing: border-box;
 }
-h2 {
+.profile h2 {
     background: pink;
     font-size: 70px;
     text-align: center;
-    margin: 0;
-    padding-top: 90px;
+    margin: auto;
+    width: 60vw;
     font-family: 'Dancing Script', cursive;
     /* text-shadow: 2px 2px 5px gray; */
+    box-sizing: border-box;
 
 }
-.body {
+.profile .body {
     background-color: white;
     height: 100%;
     width: 70vw;
@@ -26,6 +28,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
 }
 img {
     /* box-shadow: 2px 2px 5px gray; */

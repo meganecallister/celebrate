@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
+import gift from '../../neon-gift.jpg';
 
 function Nav() {
     return (
@@ -18,8 +19,10 @@ function Nav() {
                     </a>
                 </div>
             </div>
+
+            //=== I KNOW THE HEADER HAS STRETCHING PROBLEMS ===//
             <header>
-            <img src='' alt=''/>
+            <img className='cupcakes' src={gift} alt='cupcakes in a row'/>
             </header>
         </div>
     )       
