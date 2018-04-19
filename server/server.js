@@ -124,15 +124,16 @@ app.get('/displayFriendsList', (req, res) => {
     })
 })
 
-app.get('/displayFriendInfo', (req, res) => {
+app.get('/api/displayFriendInfo/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
         if(!userId) {
             res.redirect('http://localhost:3000')
         } else {
-            db.view_friend_info([req.session.passport.user])
+            db.view_friend_info([req.session.passport.user, req.params.id])
             .then((friendInfo) => {
                 res.status(200).send(friendInfo);
+                console.log(req.session.passport.user, req.params.id)
             })
         }
     })
@@ -165,6 +166,8 @@ app.delete('/api/deleteFriend/:id', (req, res) => {
         }
     })
 })
+
+
 
 
 //=========== AUTH LOGOUT ============//

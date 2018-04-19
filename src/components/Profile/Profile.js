@@ -25,8 +25,8 @@ class Profile extends Component {
 
     handleSave() {
         const { birthday, color, cake, icecream } = this.props;
-        const { birthday, color, cake, icecream } = body;
-        
+        const body = { birthday, color, cake, icecream }
+
         axios.put('/api/updateInfo', body)
         .then((res) => {
             this.closeModal();

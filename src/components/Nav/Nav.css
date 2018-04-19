@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
 .nav {
@@ -35,8 +35,9 @@ header {
 
 .link-button {
     background: #2d2d2d;
-    color: rgb(246, 209, 255);
-    font-family: 'Raleway', sans-serif;
+    color: white;    
+
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     margin-right: 10px;
     height: 40px;
@@ -46,7 +47,7 @@ header {
     justify-content: flex-start;
 }
 .link-button:hover {
-    color: white;
+    color: #F2BCFF;
 }
 .link-button:visited {
     color: rgb(235, 153, 255);

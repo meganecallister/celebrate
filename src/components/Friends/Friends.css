@@ -3,31 +3,26 @@
 .friends {
     background: #F2BCFF;
     height: 100%;
-    width: 100%;
+    width: 70vw;
+    margin: auto;
 }
 h2 {
     font-size: 70px;
+    margin: auto;
     text-align: center;
-    margin: 0;
-    height: px;
-    padding-top: 90px;
     font-family: 'Dancing Script', cursive;
-    /* text-shadow: 2px 2px 5px gray; */
 }
 .body {
-    background-color: #eee;
-    height: 100vh;
-    width: 70vw;
+    background-color: black;
+    height: 100%;
+    width: 60vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     overflow: auto;
 }
-.friends img {
-    box-shadow: 2px 2px 5px gray;
-    border-radius: 2px;
-    width: 10%;
-}
+
+
 .friendsList {
     background: blue;
     display: flex;
@@ -44,10 +39,34 @@ h2 {
 }
 .each-friend img {
     width: 70px;
-    /* box-shadow: none; */
 }
 .each-friend button {
     height: 30px;
     width: 70px;
     margin: 5px;
+}
+
+
+#myFriendModal {
+    background: rgba(70, 70, 70, .5);
+    height: 100%;
+    width: 100%;
+    z-index: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.modal-content {
+    background: rgba(255, 255, 255, 1);
+    height: 70%;
+    width: 50%;
+    top: 15%;
+    left: 25%;
+    position: absolute;
+    z-index: 11px;
+    border-radius: 5px;  
+}
+#exit {
+    height: 20px;
+    width: 20px;
 }

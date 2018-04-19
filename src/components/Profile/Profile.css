@@ -31,11 +31,6 @@ img {
     /* box-shadow: 2px 2px 5px gray; */
     border-radius: 3px;
 }
-.popup {
-    /* background: blue; */
-    height: 500px;
-    width: 500px;
-}
 .body button {
     height: 40px;
     width: 100px;
@@ -58,6 +53,5 @@ img {
     left: 25%;
     position: absolute;
     z-index: 11px;
-    border-radius: 5px;
-    
+    border-radius: 5px;  
 }

@@ -8,6 +8,7 @@ class Friends extends Component {
         super()
         this.state = {
             friendsList: [],
+            friendInfo: [],
             newFriend: ''
         };
         this.addFriend = this.addFriend.bind(this);
@@ -52,7 +53,13 @@ class Friends extends Component {
 
     openModal = ( id ) => {
         document.getElementById('myFriendModal').style.display = 'block';
-        axios.get(friends info)
+        axios.get(`/api/displayFriendInfo/${id}`).then(res => {
+            this.setState({
+                friendInfo: res.data
+            })
+            console.log('openModal response:', this.state.friendInfo)
+        })
+    
     }
 
     closeModal = () => {
@@ -73,12 +80,11 @@ class Friends extends Component {
                     </div>
                 )
             })
+
         return (
             <div className='friends'>
+                <h2>Friends</h2>
                 <div className='body'>
-
-                    <h2>Friends</h2>
-     
                     <div>
                         <input
                             placeholder='Name'
@@ -87,18 +93,21 @@ class Friends extends Component {
                         />
                         <button onClick={this.addFriend}>Add Friend</button>
 
+
                             <div className='friendsList'>
                                 { friends }
                             </div>
 
+
                         <div id="myFriendModal" style={{display: 'none'}}>
                             <div className='modal-content'>
                             <FriendInfo
+                                friendInfo={this.state.friendInfo}
                                 closeModal={this.closeModal}
                             />
-                           
+                            </div>
                         </div>
-                    </div>
+
 
                 </div>
             </div>

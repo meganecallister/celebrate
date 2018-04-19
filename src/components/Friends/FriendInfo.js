@@ -5,22 +5,11 @@ import axios from 'axios';
 class FriendInfo extends Component {
     constructor() {
         super()
-        this.state = {
-            friendInfo: []
-        };
-    }
 
-    displayFriendInfo() {
-        axios.get('/displayFriendInfo').then(res => {
-            this.setState({
-                profileInfo: res.data
-            })
-        })
-        .catch(err => {console.log(err);})
     }
 
     render() {
-        let friendPreferences = this.state.friendInfo.map( (e, i) => {
+        let friendPreferences = this.props.friendInfo.map( (e, i) => {
             return (
                 <div key={i}>
                     <h4>Birthday Preferences</h4>
@@ -34,11 +23,10 @@ class FriendInfo extends Component {
 
         return (
             <div>
-                Friend Modal!
-                { friendPreferences }
 
-                <button onClick={this.props.closeModal}>Cancel</button>
-                <button onClick={this.props.handleSave}>Submit</button>
+               <button id="exit" onClick={this.props.closeModal}>X</button>                
+                { friendPreferences }
+                <button onClick={this.props.closeModal}>Close</button>   
 
             </div>
         )

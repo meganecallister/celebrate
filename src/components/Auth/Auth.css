@@ -19,3 +19,63 @@
     font-size: 30px;
     margin: 20px;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Raleway');
+
+.auth {
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Dancing Script', cursive;
+    background-color: gray;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.left-side {
+    background-color: white;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1 {
+    background-color: white;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(229, 124, 255);
+    /* text-shadow: 2px 2px 5px gray; */
+    font-size: 140px;
+    margin: 0;
+    text-decoration: none!important;
+}
+img {
+    width: 100%;
+}
+.right-side {
+    background: linear-gradient(rgb(229, 124, 255), rgb(253, 244, 255));
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.catch-phrase {
+    color: black;
+    font-size: 40px;
+    margin: 20px;
+}
+.auth-button {
+    /* font-family: 'Raleway', sans-serif; */
+    background-color: white;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+    border-radius: 5px;
+}
+button:focus {
+    outline: none;
+}
