@@ -12,7 +12,7 @@ export default function Auth() {
                 <button className='link-button'>LOGIN</button>
             </a>
             </div>
-            <img src={party} alt='bright watercolor background'/>
+            {/* <img src={party} alt='bright watercolor background'/> */}
 
         </div>
     )    

@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Roboto');
 
 .profile {
-    background: #F2BCFF;
-    height: 100%;
-    width: 68vw;
+    background: #eee;
+    height: 80vh;
+    width: 100%;
     margin: auto;
     box-sizing: border-box;
 }
@@ -11,13 +11,14 @@
 .profile .body {
     background-color: white;
     height: 100%;
-    width: 70vw;
+    width: 60vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     /* box-shadow: 2px 2px 5px gray; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 100px;
     box-sizing: border-box;
 }
 img {

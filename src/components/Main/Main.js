@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { getUserInfo } from '../../ducks/reducer';
 import { connect } from 'react-redux';
-import Sidebar from '../Sidebar/Sidebar';
+// import Sidebar from '../Sidebar/Sidebar';
 import Nav from '../Nav/Nav';
-import Home from '../Home/Home';
+import About from '../About/About';
 // import Admin from '../Admin/Admin';
 import Profile from '../Profile/Profile';
 import Friends from '../Friends/Friends';
@@ -56,10 +56,10 @@ class Main extends Component {
         return (
             <div>
                 <Nav userDataJSX={userDataJSX} />
-                <Sidebar userDataJSX={userDataJSX}/>
+                {/* <Sidebar userDataJSX={userDataJSX}/> */}
                 <div className='main'>
                     <Switch>
-                        <Route path='/main/home' component={Home}/>
+                        <Route path='/main/about' component={About}/>
                         <Route path='/main/profile' component={Profile}/>
                         <Route path='/main/friends' component={Friends}/>
                         <Route path='/main/groups' component={Groups}/>

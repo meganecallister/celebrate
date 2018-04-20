@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Roboto');
 
 .friends {
-    background: #F2BCFF;
-    height: 100%;
-    width: 70vw;
+    background: #eee;
+    height: 80vh;
+    width: 100%;
     margin: auto;
 }
 .friends .body {
-    background-color: red;
+    background-color: white;
     height: 100%;
     width: 60vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     overflow: auto;
+    padding: 50px;
+    box-sizing: border-box;
 }
 
 
@@ -21,7 +23,9 @@
     background: #777;
     display: flex;
     flex-wrap: wrap;
-    margin: 50px;
+    margin: auto;
+    width: 100%;
+
 }
 .each-friend {
     background: #555;
