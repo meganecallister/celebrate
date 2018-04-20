@@ -3,6 +3,7 @@
 .nav {
     margin: 0;
     width: 100%;
+    height: 15vh;
     top: 0;
     left: 0;
     display: flex;
@@ -16,20 +17,19 @@
     display: none;
 }
 .nav menu {
-    height: 40px;
+    height: 6vh;
     margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-/* .image {
-    background: red;
-    height: 150px;
-    width: 150px;
-} */
 a {
     text-decoration: none;
 }
 header {
-    background: linear-gradient(#FF567B, rgb(255, 217, 91));
-    height: 20vh;
+    /* background: linear-gradient(rgb(255, 152, 174), #FF567B); */
+    background: #FF567B;
+    height: 9vh;
     width: 100%;
     overflow: hidden;
     box-sizing: border-box;
@@ -43,7 +43,7 @@ header {
 } */
 .navBar {
     background-color: white;
-    height: 40px;
+    height: 6vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -51,10 +51,10 @@ header {
     align-items: center;
     box-sizing: border-box;
     z-index: 9;
-    box-shadow: 2px 2px 2px #f0f0f0;
+    box-shadow: 1px 1px 3px #ccc;
 }
 .info {
-    height: 200px;
+    height: 100%;
     width: 40vw;
     display: flex;
     justify-content: flex-start;
@@ -63,12 +63,13 @@ header {
 .info img {
     width: 14vw;
     border-radius: 50%;
-    margin: 10px;
+    margin: 1.75vw;
+    box-shadow: 1px 1px 3px #ccc;
 }
 
 .page-links {
     width: 30vw;
-    height: 50px;
+    height: 6vh;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -80,7 +81,7 @@ header {
     color: black; 
     font-size: 16px;
     box-sizing: border-box;
-    height: 40px;
+    height: 6vh;
     border: none;
     margin-right: 10px;
     display: flex;
@@ -89,7 +90,7 @@ header {
 }
 
 .nav button:hover {
-    background: #eee;
+    color: rgb(255, 36, 109);
 }
 /* .nav button:visited {
     color: rgb(235, 153, 255);

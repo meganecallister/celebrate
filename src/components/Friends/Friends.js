@@ -71,12 +71,12 @@ class Friends extends Component {
                 return (
                     <div key={i} className='each-friend'>
                         
-                            <p>{e.display_name}</p>
+                        <div onClick={() => this.openModal(e.id)}>
                             <img src={e.img}/>
-
-                        <button onClick={() => this.openModal(e.id)}>View Info</button>
-                        <button onClick={() => this.handleDelete(e.id)}>Delete</button>
-
+                        </div>
+                        <p>{e.display_name}</p>
+                        {/* <button onClick={() => this.handleDelete(e.id)}>X</button> */}
+                        <button><i className="fas fa-trash-alt" onClick={() => this.handleDelete(e.id)}>X</i></button>
                     </div>
                 )
             })
@@ -84,32 +84,33 @@ class Friends extends Component {
         return (
             <div className='friends'>
                 <div className='body'>
-                    <div>
+
+                    <div className='add-friend'>
                         <input
-                            placeholder='Name'
+                            placeholder='Friend'
                             value={this.state.newFriend}
                             onChange={ e => this.handleChangeFriend( e.target.value) }
                         />
-                        <button onClick={this.addFriend}>Add Friend</button>
+                        <button onClick={this.addFriend}>+</button>
+                    </div>
+
+                    <div className='friendsList'>
+                        { friends }
+                    </div>
 
 
-                            <div className='friendsList'>
-                                { friends }
-                            </div>
 
-
-                        <div id="myFriendModal" style={{display: 'none'}}>
-                            <div className='modal-content'>
+                    <div id="myFriendModal" style={{display: 'none'}}>
+                        <div className='modal-content'>
                             <FriendInfo
+                                friendsList={this.state.friendsList}
                                 friendInfo={this.state.friendInfo}
                                 closeModal={this.closeModal}
                             />
-                            </div>
                         </div>
-
+                    </div> 
 
                 </div>
-            </div>
             </div>
         )
     }

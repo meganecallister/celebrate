@@ -2,27 +2,20 @@
 
 .about {
     background: #eee;
-    height: 80vh;
+    height: 85vh;
     width: 100%;
     font-family: 'Roboto', sans-serif;
-}
-.about h6 {
-    font-size: 40px;
-    text-align: center;
-    margin: 0;
-    /* padding-top: 90px; */
-    font-family: 'Dancing Script', cursive;
-    /* text-shadow: 2px 2px 5px gray; */
 }
 .about .body {
     background-color: white;
     padding: 50px;
     height: 100%;
-    width: 60vw;
+    width: 65vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 .about p {
     margin: 0;
+    text-align: center;
 }

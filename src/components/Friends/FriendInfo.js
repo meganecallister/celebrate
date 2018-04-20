@@ -12,6 +12,13 @@ class FriendInfo extends Component {
         let friendPreferences = this.props.friendInfo.map( (e, i) => {
             return (
                 <div key={i}>
+
+                    <div className='friend-info'>
+                        <div onClick={() => this.openModal(e.id)}>
+                            <img src={e.img}/>
+                        </div>
+                        <p>{e.display_name}</p>
+                    </div>
                     <h4>Birthday Preferences</h4>
                     <p>{`Birthday: ${e.birthday}`}</p>
                     <p>{`Color: ${e.color}`}</p>
@@ -23,11 +30,15 @@ class FriendInfo extends Component {
 
         return (
             <div>
-
-               <button id="exit" onClick={this.props.closeModal}>X</button>                
+                {/* { this.props.friends } */}
                 { friendPreferences }
-                <button onClick={this.props.closeModal}>Close</button>   
 
+            <div className='close-friends-modal'>
+              
+                {/* <button onClick={() => this.handleDelete(e.id)}>Delete</button> */}
+                <button>Delete Eventually</button>
+                <button onClick={this.props.closeModal}>Close</button>   
+                </div>
             </div>
         )
     }

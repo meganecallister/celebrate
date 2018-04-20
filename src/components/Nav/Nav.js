@@ -12,7 +12,10 @@ function Nav(props) {
             </header>      
 
             <div className='navBar'>
-                {props.userDataJSX}
+            <div className='info'>
+              {props.userDataJSX}
+            </div>
+              
 
 
 
@@ -24,9 +27,9 @@ function Nav(props) {
                     {/* <Link to='/main/groups'><button >Groups</button></Link> */}
                     <Link to='/main/about'><button >About</button></Link>
 
-                <div class="HAM">
-                    <p class='menu-word'>MENU</p>
-                    <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <div className="HAM">
+                    <p className='menu-word'>MENU</p>
+                    <svg className="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                         <path fill="#000" d="M8.667 15h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1zM8.667 37h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1zM8.667 26h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1z"/>
                     </svg>
                 </div>

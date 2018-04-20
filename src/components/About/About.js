@@ -7,8 +7,6 @@ class About extends Component {
             <div className='about'>
                 
                 <div className='body'>
-                {/* <h2>Home</h2> */}
-                <h6>About</h6>
                     <p>Here is an explanation page about this website! Yay!</p>
                 </div>
             </div>

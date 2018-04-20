@@ -2,7 +2,7 @@
 
 .profile {
     background: #eee;
-    height: 80vh;
+    height: 85vh;
     width: 100%;
     margin: auto;
     box-sizing: border-box;
@@ -11,13 +11,13 @@
 .profile .body {
     background-color: white;
     height: 100%;
-    width: 60vw;
+    width: 65vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     /* box-shadow: 2px 2px 5px gray; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     padding: 100px;
     box-sizing: border-box;
 }
@@ -39,20 +39,23 @@ img {
     top: 0;
     left: 0;
 }
-.modal-content {
+.profile .modal-content {
     background: rgba(255, 255, 255, 1);
-    height: 70%;
-    width: 50%;
-    top: 15%;
-    left: 25%;
+    min-height: 80%;
+    width: 60vw;
+    top: 10%;
+    left: 20%;
     position: absolute;
     z-index: 11px;
     border-radius: 5px;
-    padding: 50px;
+    padding: 5vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 1px 1px 3px #555;
 }
 
 .profile-update {
@@ -60,37 +63,62 @@ img {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-}
-.close-profile-modal {
-    height: 50px;
-    width: 100%;
-    display: flex;
     justify-content: center;
 }
-.modal-content button {
-    background: pink;
-    height: 35px;
-    margin: 8px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 3px #777;
-
-}
-
-.profile .title {
-    font-size: 30px;
-    margin: 0;
-}
-.profile-inputs {
+.close-profile-modal {
+    height: 25%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 10px;
+}
+.modal-content button {
+    background: rgb(255, 36, 109);
+    color: white;
+    min-width: 150px;
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.profile .title {
+    height: 15%;
+    font-size: 50px;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(255, 36, 109);
+}
+.profile-inputs {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+
 }
 .profile input {
-    height: 25px;
-    width: 250px;
-    margin: 8px auto;
+    height: 30px;
+    min-width: 150px;
+    width: 80%;
+    margin: 0;
+    margin-top: 2vh;
     font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: solid 1px #ccc;
 }

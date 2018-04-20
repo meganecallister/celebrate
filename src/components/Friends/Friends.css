@@ -2,14 +2,14 @@
 
 .friends {
     background: #eee;
-    height: 80vh;
+    min-height: 85vh;
     width: 100%;
     margin: auto;
 }
 .friends .body {
     background-color: white;
     height: 100%;
-    width: 60vw;
+    width: 65vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -17,10 +17,24 @@
     padding: 50px;
     box-sizing: border-box;
 }
-
+.add-friend {
+    width: 100%;
+    /* background: blue; */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.add-friend button {
+    height: 30px;
+    width: 50px;
+    margin: 0;
+}
+.add-friend input {
+    margin-right: 5px;
+}
 
 .friendsList {
-    background: #777;
+    /* background: #777; */
     display: flex;
     flex-wrap: wrap;
     margin: auto;
@@ -28,41 +42,85 @@
 
 }
 .each-friend {
-    background: #555;
-    height: 200px;
-    margin: 10px;    
+    /* background: #555; */
+    height: 150px;
+    width: 140px;   
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-right: 2px;
 }
 .each-friend img {
-    width: 70px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0;
+    box-shadow: 1px 1px 3px #ccc;
+}
+.each-friend p {
+    font-size: 16px;
+    margin: 0;
 }
 .each-friend button {
+    color: black;
+    width: 50px;
     height: 30px;
-    width: 70px;
-    margin: 5px;
+    margin: 0;
 }
 
 
 #myFriendModal {
     background: rgba(70, 70, 70, .5);
+    min-height: 100vh;
     height: 100%;
     width: 100%;
-    z-index: 10px;
+    z-index: 50;
     position: absolute;
     top: 0;
     left: 0;
 }
-.modal-content {
+.friends .modal-content {
     background: rgba(255, 255, 255, 1);
-    height: 70%;
-    width: 50%;
+    min-height: 70%;
+    width: 60vw;
     top: 15%;
-    left: 25%;
+    left: 20%;
     position: absolute;
     z-index: 11px;
-    border-radius: 5px;  
+    border-radius: 5px;
+    padding: 5vw;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 1px 1px 3px #555;
+}
+.friends .friend-info {
+    background: blue;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.friends .friends-info img {
+    border-radius: 50%;
+    height: 80px;
+    margin: 0;
+    box-shadow: 1px 1px 3px #ccc;
+}
+.close-friends-modal {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 #exit {
     height: 20px;

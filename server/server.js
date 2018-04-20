@@ -150,6 +150,7 @@ app.get('/api/displayFriendInfo/:id', (req, res) => {
             .then((friendInfo) => {
                 res.status(200).send(friendInfo);
                 console.log(req.session.passport.user, req.params.id)
+                console.log('friendInfo:', friendInfo);
             })
         }
     })
