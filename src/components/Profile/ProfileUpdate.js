@@ -19,22 +19,22 @@ class ProfileUpdate extends Component {
             <div className='profile-inputs'>
                         <input
                             type='text'
-                            placeholder='Birth Month & Day'
+                            placeholder=' Birth Month & Day'
                             onChange={ e => this.props.updateBirthdayType( e.target.value) }
                         />
                         <input
                             type='text'
-                            placeholder='Color'
+                            placeholder=' Color'
                             onChange={ e => this.props.updateColorType( e.target.value) }
                         />
                         <input
                             type='text'
-                            placeholder='Cake'
+                            placeholder=' Cake'
                             onChange={ e => this.props.updateCakeType( e.target.value) }
                         />
                         <input
                             type='text'
-                            placeholder='Ice Cream'
+                            placeholder=' Ice Cream'
                             onChange={ e => this.props.updateIceCreamType( e.target.value) }
                         />
                         </div>

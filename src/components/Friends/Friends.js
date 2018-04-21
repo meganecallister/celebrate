@@ -96,7 +96,7 @@ class Friends extends Component {
                             <img src={e.img}/>
                         </div>
                         <p>{e.display_name}</p>
-                        <button onClick={() => this.handleDelete(e.id)}>Delete</button>
+                        <button className='delete-button' onClick={() => this.handleDelete(e.id)}>Delete</button>
                     </div>
                 )
             })
@@ -108,11 +108,11 @@ class Friends extends Component {
                     <h1>Friends</h1>
                     <div className='add-friend'>
                         <input
-                            placeholder='Friend'
+                            placeholder=' Friend'
                             value={this.state.newFriend}
                             onChange={ e => this.handleChangeFriend( e.target.value) }
                         />
-                        <button onClick={this.addFriend}>Add</button>
+                        <button className='add-friend-button' onClick={this.addFriend}>Add</button>
                     </div>
 
                     <div className='friendsList'>

@@ -30,8 +30,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    margin-top: 2vh;
 }
-.add-friend button {
+.add-friend .add-friend-button {
     background: rgb(255, 36, 109);
     color: white;
     min-width: 150px;
@@ -49,7 +50,7 @@
     min-width: 150px;
     width: 40%;
     margin: 0;
-    margin-right: 2vw;
+    margin-right: 1vw;
     font-size: 18px;
     box-sizing: border-box;
     border-radius: 3px;
@@ -61,35 +62,38 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    width: 100%;
-
+    width: 65vw;
+    font-size: 18px;
+    padding: 5%;
+    box-sizing: border-box;
 }
 .each-friend {
     /* background: #555; */
     height: 150px;
-    width: 140px;   
+    width: 24%;
+    min-width: 120px;  
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
-    margin-right: 2px;
+    margin: 2px;
 }
 .each-friend img {
     height: 80px;
     border-radius: 50%;
     cursor: pointer;
-    margin: 0;
     box-shadow: 1px 1px 3px #ccc;
 }
 .each-friend p {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
 }
-.each-friend button {
-    color: black;
-    width: 50px;
-    height: 30px;
+.each-friend .delete-button {
+    background: rgb(255, 36, 109);
+    color: white;
+    max-width: 20px;
+    height: 35px;
     margin: 0;
 }
 
@@ -148,4 +152,7 @@
 #exit {
     height: 20px;
     width: 20px;
+}
+input:focus {
+    outline: solid 1px rgb(255, 36, 109);;
 }
