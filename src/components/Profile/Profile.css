@@ -2,7 +2,7 @@
 
 .profile {
     background: #eee;
-    height: 85vh;
+    height: 75vh;
     width: 100%;
     margin: auto;
     box-sizing: border-box;
@@ -14,21 +14,42 @@
     width: 65vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     /* box-shadow: 2px 2px 5px gray; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 100px;
+    padding-left: 140px;
+    padding-right: 140px;
     box-sizing: border-box;
 }
-img {
-    /* box-shadow: 2px 2px 5px gray; */
-    border-radius: 3px;
+.profile h1 {
+    height: 15%;
+    font-size: 80px;
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(255, 36, 109);
+}
+.profile .preferences {
+    margin: 20px;
 }
 .body button {
+    background: rgb(255, 36, 109);
+    color: white;
+    min-width: 150px;
+    width: 40%;
     height: 40px;
-    width: 100px;
     margin: auto;
+    margin-top: 10px;
+    border-radius: 3px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+    cursor: pointer;
 }
 #myModal {
     background: rgba(0, 0, 0, 0.5);
@@ -81,19 +102,17 @@ img {
     min-width: 150px;
     width: 40%;
     height: 40px;
-    margin-top: 10px;
     border-radius: 3px;
     border: none;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
 }
 
-.profile .title {
+.profile-update h1 {
     height: 15%;
-    font-size: 50px;
+    font-size: 80px;
     margin: 0;
-    margin-bottom: 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -108,16 +127,16 @@ img {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: auto;
+    margin: 20px auto;
 
 }
-.profile input {
+.profile-update input {
     height: 30px;
     min-width: 150px;
     width: 80%;
     margin: 0;
     margin-top: 2vh;
-    font-size: 16px;
+    font-size: 18px;
     box-sizing: border-box;
     border-radius: 3px;
     border: solid 1px #ccc;

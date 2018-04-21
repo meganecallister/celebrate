@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { getUserInfo } from '../../ducks/reducer';
 import { connect } from 'react-redux';
+// import  'font-awesome/css/font-awesome.min.css';
 // import Sidebar from '../Sidebar/Sidebar';
 import Nav from '../Nav/Nav';
 import About from '../About/About';

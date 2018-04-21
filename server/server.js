@@ -47,6 +47,9 @@ passport.use(new Auth0Strategy({
                 profile.displayName,
                 profile.id
             ]).then( createdUser => {
+                db.create_info([
+                    createdUser[0].id
+                ])
                 return done(null, createdUser[0].id)
             })
         } else {
@@ -95,15 +98,16 @@ app.get('/displayProfileInfo', (req, res) => {
 //trying a post, lolz
 app.post('/api/updateInfo', (req, res) => {
     console.log('server: trying to update!')
-    console.log('req.params', req.params)
-    console.log('req.params.id', req.params.id)
+    console.log(req.body)
     const db = req.app.get('db');
     const { birthday, color, cake, icecream } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
-        if(!userId) {
+        console.log(userId);
+        if(!userId[0]) {
             res.redirect(process.env.FAILURE_REDIRECT)
             console.log('server: could not find an id...')
         } else {
+            console.log('else')
             // db.find_info([req.params.id]).then( infoResult => {
             //     if(!infoResult[0]) {
             //         console.log('server: could not find info so I am adding some')
@@ -112,7 +116,8 @@ app.post('/api/updateInfo', (req, res) => {
             //             res.send(createdInfo)
             //         })
             //     } else {
-                    db.update_info([birthday, color, cake, icecream, req.params.id, req.session.passport.user])
+                    console.log(req.session.passport)
+                    db.update_info([birthday, color, cake, icecream, req.session.passport.user])
                     .then( newInfo => {
                         console.log('newInfo ==>', newInfo)
                         console.log('Oh I know you I am adding the updates')
@@ -129,7 +134,7 @@ app.post('/api/updateInfo', (req, res) => {
 app.get('/displayFriendsList', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
-        if(!userId) {
+        if(!userId[0]) {
             res.redirect(process.env.FAILURE_REDIRECT)
         } else {
             db.view_friends([req.session.passport.user])
@@ -143,7 +148,7 @@ app.get('/displayFriendsList', (req, res) => {
 app.get('/api/displayFriendInfo/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
-        if(!userId) {
+        if(!userId[0]) {
             res.redirect(process.env.FAILURE_REDIRECT)
         } else {
             db.view_friend_info([req.session.passport.user, req.params.id])
@@ -159,7 +164,7 @@ app.get('/api/displayFriendInfo/:id', (req, res) => {
 app.put('/api/addFriend/:id', (req, res) => {
     const db = req.app.get('db');
     db.find_session_user([req.session.passport.user]).then((userId) => {
-        if(!userId) {
+        if(!userId[0]) {
             res.redirect(process.env.FAILURE_REDIRECT)
         } else {
             db.add_friend([req.session.passport.user, req.body.newFriend])
@@ -172,10 +177,13 @@ app.put('/api/addFriend/:id', (req, res) => {
 
 app.delete('/api/deleteFriend/:id', (req, res) => {
     const db = req.app.get('db');
+    console.log('server: deleting', req.params.id)
     db.find_session_user([req.session.passport.user]).then((userId) => {
-        if(!userId) {
+        if(!userId[0]) {
             res.redirect(process.env.FAILURE_REDIRECT)
         } else {
+            req.params.id = parseInt(req.params.id);
+            console.log(req.session.passport.user, req.params.id )
             db.delete_friend([req.session.passport.user, req.params.id])
             .then( (newFriendList) => {
                 res.send(newFriendList);

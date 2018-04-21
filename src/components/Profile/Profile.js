@@ -49,8 +49,7 @@ class Profile extends Component {
     render() {
         let preferences = this.state.profileInfo.map( (e, i) => {
             return (
-                <div key={i}>
-                    <p>Birthday Preferences</p>
+                <div key={i} className='preferences'>
                     <p>{`Birthday: ${e.birthday}`}</p>
                     <p>{`Color: ${e.color}`}</p>
                     <p>{`Cake: ${e.cake}`}</p>
@@ -63,7 +62,7 @@ class Profile extends Component {
             <div className='profile'>
             
                 <div className='body'>
-
+                    <h1>Profile</h1>
 
                     { preferences }
                     <button onClick={this.openModal}>Update Info</button>

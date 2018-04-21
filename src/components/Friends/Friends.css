@@ -2,35 +2,58 @@
 
 .friends {
     background: #eee;
-    min-height: 85vh;
+    min-height: 75vh;
     width: 100%;
     margin: auto;
 }
 .friends .body {
     background-color: white;
+    min-height: 75vh;
     height: 100%;
     width: 65vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     overflow: auto;
-    padding: 50px;
+    /* padding: 50px; */
     box-sizing: border-box;
+}
+.friends h1 {
+    font-size: 80px;
+    margin-top: 50px;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(255, 36, 109);
 }
 .add-friend {
     width: 100%;
-    /* background: blue; */
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-bottom: 30px;
 }
 .add-friend button {
-    height: 30px;
-    width: 50px;
+    background: rgb(255, 36, 109);
+    color: white;
+    min-width: 150px;
+    width: 20%;
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+    cursor: pointer;
     margin: 0;
 }
 .add-friend input {
-    margin-right: 5px;
+    height: 35px;
+    min-width: 150px;
+    width: 40%;
+    margin: 0;
+    margin-right: 2vw;
+    font-size: 18px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: solid 1px #ccc;
 }
 
 .friendsList {

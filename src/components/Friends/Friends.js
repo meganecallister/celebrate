@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './Friends.css';
 import axios from 'axios';
 import FriendInfo from './FriendInfo';
+// var FontAwesome = require('react-fontawesome');
+
 
 class Friends extends Component {
     constructor() {
@@ -33,23 +35,42 @@ class Friends extends Component {
         const body = {
             newFriend: this.state.newFriend
         }
-
         axios.put(`/api/addFriend/${id}`, body)
         .then( res => {
             this.setState({
                 friendsList: res.data
             })
+        }) 
+        this.setState({
+            newFriend: ''
+        }) 
+    }
+
+    getFriendsList() {
+        axios.get('/displayFriendsList').then(res => {
+            this.setState({
+                friendsList: res.data
+            })
         })
+        .catch(err => {console.log(err);})
     }
 
     handleDelete( id ) {
+        console.log('trying to delete a friend!')
         axios.delete(`/api/deleteFriend/${id}`)
         .then( (res) => {
             this.setState({
                 friendsList: res.data
             })
+            this.getFriendsList()
+
+        }).catch( err => {
+            console.log(err);
         })
+
     }
+    
+
 
     openModal = ( id ) => {
         document.getElementById('myFriendModal').style.display = 'block';
@@ -75,8 +96,7 @@ class Friends extends Component {
                             <img src={e.img}/>
                         </div>
                         <p>{e.display_name}</p>
-                        {/* <button onClick={() => this.handleDelete(e.id)}>X</button> */}
-                        <button><i className="fas fa-trash-alt" onClick={() => this.handleDelete(e.id)}>X</i></button>
+                        <button onClick={() => this.handleDelete(e.id)}>Delete</button>
                     </div>
                 )
             })
@@ -85,19 +105,19 @@ class Friends extends Component {
             <div className='friends'>
                 <div className='body'>
 
+                    <h1>Friends</h1>
                     <div className='add-friend'>
                         <input
                             placeholder='Friend'
                             value={this.state.newFriend}
                             onChange={ e => this.handleChangeFriend( e.target.value) }
                         />
-                        <button onClick={this.addFriend}>+</button>
+                        <button onClick={this.addFriend}>Add</button>
                     </div>
 
                     <div className='friendsList'>
                         { friends }
                     </div>
-
 
 
                     <div id="myFriendModal" style={{display: 'none'}}>

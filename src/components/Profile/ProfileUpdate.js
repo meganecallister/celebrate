@@ -14,8 +14,8 @@ class ProfileUpdate extends Component {
         return (
             <div className='profile-update'>
               
-                <h6 className='title'>Update</h6>
-
+                <h1>Update</h1>
+                
             <div className='profile-inputs'>
                         <input
                             type='text'
@@ -39,8 +39,10 @@ class ProfileUpdate extends Component {
                         />
                         </div>
                 <div className='close-profile-modal'>
-                    <button onClick={this.props.closeModal}>Cancel</button>
+
                     <button onClick={this.props.handleSave}>Submit</button>
+                    <button onClick={this.props.closeModal}>Cancel</button>
+
                 </div>
             </div>
         )
