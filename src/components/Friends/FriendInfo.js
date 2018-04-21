@@ -26,7 +26,7 @@ class FriendInfo extends Component {
 
                     <div className='close-friends-modal'>
                         <button onClick={this.props.closeModal}>Close</button>   
-                        <button className='delete-button' onClick={() => this.props.handleDelete(e.id)}>Delete</button>
+                        <button className='delete-button' onClick={() => this.props.handleDelete(e.id)}>Delete Friend</button>
                     </div>
                 </div>
             )

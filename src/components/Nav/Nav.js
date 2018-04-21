@@ -1,20 +1,21 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 import party from '../../party-background.jpg';
 
-class Nav extends Component() {
-    constructor() {
-        super();
+function Nav(props) {
+    // constructor() {
+    //     super();
 
-    }
+    // }
 
-    handleDropDown() {
-        document.getElementById("dropLinks").classList.toggle("show");
-        console.log('clicked on dropdown!')
-    }
+    // handleDropDown() {
+    //     document.getElementById("dropLinks").classList.toggle("show");
+    //     console.log('clicked on dropdown!')
+    // }
 
-    render() {
+    // render() {
         return (
             <div className='nav'>
     
@@ -26,7 +27,7 @@ class Nav extends Component() {
                     {props.userDataJSX}
                     </div>
     
-                    <div className="HAM" onClick={this.handleDropDown}>
+                    {/* <div className="HAM" onClick={this.handleDropDown}>
                         <svg className="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                             <path fill="#000" d="M8.667 15h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1zM8.667 37h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1zM8.667 26h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1z"/>
                         </svg>
@@ -37,10 +38,10 @@ class Nav extends Component() {
 
                             {/* <Link to='/main/groups'><button >Groups</button></Link> */}
                             
-                            <Link to='/main/about'><button >About</button></Link>
+                            {/* <Link to='/main/about'><button >About</button></Link>
                         </div>
 
-                    </div>
+                    </div> */}
     
                     <div className='page-links'>
                         <Link to='/main/profile'><button >Profile</button></Link>
@@ -59,6 +60,6 @@ class Nav extends Component() {
             </div>
         )       
     }
-}
+// }
     
 export default Nav;

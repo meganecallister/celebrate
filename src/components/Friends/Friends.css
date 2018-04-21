@@ -128,7 +128,7 @@
     justify-content: space-between;
     box-shadow: 1px 1px 3px #555;
 }
-.friends .friend-info {
+/* .friends .friend-info {
     background: blue;
     height: 100%;
     width: 100%;
@@ -141,7 +141,7 @@
     height: 80px;
     margin: 0;
     box-shadow: 1px 1px 3px #ccc;
-}
+} */
 .close-friends-modal {
     height: 25%;
     width: 100%;
