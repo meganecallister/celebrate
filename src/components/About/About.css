@@ -2,20 +2,37 @@
 
 .about {
     background: #eee;
-    height: 75vh;
+    min-height: 75vh;
     width: 100%;
-    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 .about .body {
     background-color: white;
-    padding: 50px;
+    min-height: 75vh;
     height: 100%;
     width: 65vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 6vw;
+    padding-right: 6vw;
     box-sizing: border-box;
+}
+.about h2 {
+    font-size: 80px;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: rgb(255, 36, 109);
 }
 .about p {
     margin: 0;
-    text-align: center;
+}
+.about .welcome {
+    margin-bottom: 25vh;
 }

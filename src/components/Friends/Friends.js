@@ -14,6 +14,7 @@ class Friends extends Component {
             newFriend: ''
         };
         this.addFriend = this.addFriend.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount() {
@@ -62,8 +63,8 @@ class Friends extends Component {
             this.setState({
                 friendsList: res.data
             })
+            this.closeModal()
             this.getFriendsList()
-
         }).catch( err => {
             console.log(err);
         })
@@ -96,7 +97,7 @@ class Friends extends Component {
                             <img src={e.img}/>
                         </div>
                         <p>{e.display_name}</p>
-                        <button className='delete-button' onClick={() => this.handleDelete(e.id)}>Delete</button>
+                        {/* <button className='delete-button' onClick={() => this.handleDelete(e.id)}>Delete</button> */}
                     </div>
                 )
             })
@@ -105,10 +106,10 @@ class Friends extends Component {
             <div className='friends'>
                 <div className='body'>
 
-                    <h1>Friends</h1>
+                    <h2>Friends</h2>
                     <div className='add-friend'>
                         <input
-                            placeholder=' Friend'
+                            placeholder='Friend'
                             value={this.state.newFriend}
                             onChange={ e => this.handleChangeFriend( e.target.value) }
                         />
@@ -126,6 +127,7 @@ class Friends extends Component {
                                 friendsList={this.state.friendsList}
                                 friendInfo={this.state.friendInfo}
                                 closeModal={this.closeModal}
+                                handleDelete={this.handleDelete}
                             />
                         </div>
                     </div> 

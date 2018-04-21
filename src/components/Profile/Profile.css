@@ -2,15 +2,15 @@
 
 .profile {
     background: #eee;
-    height: 75vh;
+    min-height: 75vh;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
 .profile .body {
     background-color: white;
-    height: 100%;
+    min-height: 75vh;
     width: 65vw;
     margin: auto;
     font-family: 'Roboto', sans-serif;
@@ -23,20 +23,24 @@
     padding-right: 140px;
     box-sizing: border-box;
 }
-.profile h1 {
-    height: 15%;
+.profile h2 {
     font-size: 80px;
-    margin-top: 50px;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-family: 'Dancing Script', cursive;
     color: rgb(255, 36, 109);
 }
-.profile .preferences {
-    margin: 20px;
+.preferences {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+.preferences p {
+    margin: 0;
+}
+
 .body button {
     background: rgb(255, 36, 109);
     color: white;
@@ -44,7 +48,7 @@
     width: 40%;
     height: 40px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 5vh;
     border-radius: 3px;
     border: none;
     box-sizing: border-box;
@@ -96,6 +100,7 @@
     margin: 0;
     margin-top: 10px;
 }
+
 .modal-content button {
     background: rgb(255, 36, 109);
     color: white;
@@ -128,7 +133,6 @@
     justify-content: flex-start;
     align-items: center;
     margin: 20px auto;
-
 }
 .profile-update input {
     height: 30px;
@@ -140,7 +144,32 @@
     box-sizing: border-box;
     border-radius: 3px;
     border: solid 1px #ccc;
+    padding-left: 8px;
 }
 input:focus {
     outline: solid 1px rgb(255, 36, 109);;
+}
+@media (max-width: 685px) {
+    .profile h2 {
+        font-size: 60px;
+    }
+    .profile .body {
+        background-color: white;
+        min-height: 85vh;
+        width: 100%;
+        margin: auto;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        /* box-shadow: 2px 2px 5px gray; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        box-sizing: border-box;
+    }
+
+
+
+
 }

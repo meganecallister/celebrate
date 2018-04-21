@@ -14,16 +14,20 @@ class FriendInfo extends Component {
                 <div key={i}>
 
                     <div className='friend-info'>
-                        <div onClick={() => this.openModal(e.id)}>
-                            <img src={e.img}/>
-                        </div>
+                        <img src={e.img}/>
                         <p>{e.display_name}</p>
                     </div>
+
                     <h4>Birthday Preferences</h4>
                     <p>{`Birthday: ${e.birthday}`}</p>
                     <p>{`Color: ${e.color}`}</p>
                     <p>{`Cake: ${e.cake}`}</p>
                     <p>{`Ice cream: ${e.icecream}`}</p>
+
+                    <div className='close-friends-modal'>
+                        <button onClick={this.props.closeModal}>Close</button>   
+                        <button className='delete-button' onClick={() => this.props.handleDelete(e.id)}>Delete</button>
+                    </div>
                 </div>
             )
         })
@@ -35,9 +39,7 @@ class FriendInfo extends Component {
 
             <div className='close-friends-modal'>
               
-                {/* <button onClick={() => this.handleDelete(e.id)}>Delete</button> */}
-                <button>Delete Eventually</button>
-                <button onClick={this.props.closeModal}>Close</button>   
+                {/* <button onClick={this.props.closeModal}>Close</button>    */}
                 </div>
             </div>
         )

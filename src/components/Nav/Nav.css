@@ -66,7 +66,7 @@ header {
     width: 14vw;
     border-radius: 50%;
     margin: 1.75vw;
-    box-shadow: 1px 1px 3px #ccc;
+    /* box-shadow: 1px 1px 3px #ccc; */
 }
 
 .page-links {
@@ -102,6 +102,43 @@ button:focus {
     outline: 0;
 }
 
-@media (max-width: 320px) {
-    
+@media (max-width: 685px) {
+    .nav {
+        height: 15vh;
+        font-size: 18px;
+    }
+    header {
+        height: 9vh;
+    }
+    .page-links {
+        display: none;
+    }
+    .info {
+        width: 80vw;
+    }
+    .nav menu {
+        display: none;
+        /* height: 6vh;
+        width: 20vw;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center; */
+    }
+    .HAM {
+        height: 6vh;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        z-index: 20px;
+        margin-right: 10px;
+    }
+    .menu-svg {
+        width: 30px;
+    }
+    .info img {
+        width: 20vw;
+    }
 }
