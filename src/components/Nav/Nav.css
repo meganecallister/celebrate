@@ -131,7 +131,7 @@ button:focus {
     }
     .dropdown-content {
         position: fixed;
-        top: 16vh;
+        top: 18vh;
         right: -150px;
         transition: all .5s ease;
         width: 110px;
