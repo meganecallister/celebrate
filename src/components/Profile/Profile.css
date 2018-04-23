@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 5vh;
-    /* margin-bottom: 25vh; */
+    margin-bottom: 10vh;
 }
 .body button {
     background: rgb(255, 36, 109);
@@ -67,7 +67,7 @@
     height: 100vh;
     width: 100%;
     z-index: 50;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 }
