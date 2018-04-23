@@ -22,7 +22,7 @@ class Profile extends Component {
             })
         })
     }
-//trying a post, lolz
+
     handleSave() {
         const { birthday, color, cake, icecream, candy, treat} = this.props;
         const body = { birthday, color, cake, icecream, candy, treat }

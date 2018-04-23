@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './Profile.css';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType, updateCandyType, updateTreatType } from '../../ducks/reducer';
 

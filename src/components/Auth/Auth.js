@@ -1,6 +1,5 @@
 import React from 'react';
 import './Auth.css';
-import party from '../../party-background.jpg';
 
 export default function Auth() {
     return (

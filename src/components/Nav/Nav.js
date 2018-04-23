@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
-import party from '../../party-background.jpg';
 
 class Nav extends Component {
     constructor() {

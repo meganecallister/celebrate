@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import './Friends.css';
-import axios from 'axios';
 
 class FriendInfo extends Component {
-    constructor() {
-        super()
-
-    }
 
     render() {
         let friendPreferences = this.props.friendInfo.map( (e, i) => {

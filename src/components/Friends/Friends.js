@@ -90,7 +90,7 @@ class Friends extends Component {
                     <div key={i} className='each-friend'>
                         
                         <div onClick={() => this.openModal(e.id)}>
-                            <img src={e.img}/>
+                            <img src={e.img} alt='google image'/>
                         </div>
                         <p>{e.display_name}</p>
                     
