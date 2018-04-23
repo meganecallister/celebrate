@@ -153,8 +153,11 @@ input:focus {
     .profile h2 {
         font-size: 60px;
         margin: 0;
-        margin-bottom: 5vh;
+        margin-bottom: 3vh;
         margin-top: 5vh;
+    }
+    .profile-inputs {
+        margin-top: 3vh;
     }
     .preferences {
         margin-left: 10vw;
@@ -172,7 +175,7 @@ input:focus {
         justify-content: center;
         align-items: center;
         margin: 0;
-        margin-top: 5vh;
+        margin-top: 3vh;
     }
     .profile-update input {
         height: 35px;
