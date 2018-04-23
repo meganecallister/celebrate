@@ -102,7 +102,7 @@ button:focus {
     outline: 0;
 }
 
-@media (max-width: 685px) {
+@media (max-width: 760px) {
     .nav {
         height: 15vh;
         font-size: 18px;
@@ -133,7 +133,7 @@ button:focus {
         position: fixed;
         top: 16vh;
         right: -150px;
-        transition: all .7s ease;
+        transition: all .5s ease;
         width: 110px;
     }
     .show {

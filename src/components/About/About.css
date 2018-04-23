@@ -17,26 +17,27 @@
     font-size: 18px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-left: 6vw;
     padding-right: 6vw;
     box-sizing: border-box;
 }
 .about h2 {
-    font-size: 80px;
+    font-size: 70px;
     margin-bottom: 5vh;
     margin-top: 5vh;
     text-align: center;
     font-family: 'Dancing Script', cursive;
     color: rgb(255, 36, 109);
 }
+.about .welcome {
+    width: 100%;
+    margin-bottom: 25vh;
+}
 .about p {
     margin: 0;
 }
-.about .welcome {
-    margin-bottom: 25vh;
-}
-@media (max-width: 685px) {
+@media (max-width: 760px) {
     .about {
         min-height: 85vh;
         width: 100%;
