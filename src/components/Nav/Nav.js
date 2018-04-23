@@ -45,8 +45,6 @@ class Nav extends Component {
                             <Link to='/main/profile'><button >Profile</button></Link>
 
                             <Link to='/main/friends'><button >Friends</button></Link>
-
-                             {/* <Link to='/main/groups'><button >Groups</button></Link> */}
                             
                             <Link to='/main/about'><button >About</button></Link>
                             <a href={ process.env.REACT_APP_LOGOUT }>

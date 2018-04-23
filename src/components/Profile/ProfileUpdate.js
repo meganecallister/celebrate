@@ -11,7 +11,6 @@ class ProfileUpdate extends Component {
     }
 
     render() {
-
         // let currentInfo = this.props.profileInfo.map( (pref, i) => {
         //     return (
         //         <div key={i} className='current-info'>

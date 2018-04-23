@@ -39,16 +39,12 @@ header {
     z-index: 2;
 }
 
-/* .nav img {
-    min-width: 1200px;
-} */
 .navBar {
     background-color: white;
     height: 6vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* padding-left: 150px; */
     align-items: center;
     box-sizing: border-box;
     z-index: 9;

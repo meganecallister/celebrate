@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { getUserInfo } from '../../ducks/reducer';
 import { connect } from 'react-redux';
-// import  'font-awesome/css/font-awesome.min.css';
-// import Sidebar from '../Sidebar/Sidebar';
 import Nav from '../Nav/Nav';
 import About from '../About/About';
-// import Admin from '../Admin/Admin';
 import Profile from '../Profile/Profile';
 import Friends from '../Friends/Friends';
-import Groups from '../Groups/Groups';
-// import AppBar from 'material-ui/AppBar';
-// import axios from 'axios';
 
 class Main extends Component {
     constructor() {
@@ -51,8 +45,6 @@ class Main extends Component {
     }
    
 
-
-
     render() {
         const { user } = this.props
         const userDataJSX = user.display_name ?
@@ -70,13 +62,11 @@ class Main extends Component {
                     userDataJSX={userDataJSX}
                 />
 
-                {/* <Sidebar userDataJSX={userDataJSX}/> */}
                 <div className='main'>
                     <Switch>
                         <Route path='/main/about' component={About}/>
                         <Route path='/main/profile' component={Profile}/>
                         <Route path='/main/friends' component={Friends}/>
-                        <Route path='/main/groups' component={Groups}/>
                     </Switch>
                 </div>
             </div>

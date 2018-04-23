@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import './Friends.css';
 import axios from 'axios';
 import FriendInfo from './FriendInfo';
-// var FontAwesome = require('react-fontawesome');
-
 
 class Friends extends Component {
     constructor() {
@@ -70,8 +68,6 @@ class Friends extends Component {
         })
 
     }
-    
-
 
     openModal = ( id ) => {
         document.getElementById('myFriendModal').style.display = 'block';
@@ -97,7 +93,7 @@ class Friends extends Component {
                             <img src={e.img}/>
                         </div>
                         <p>{e.display_name}</p>
-                        {/* <button className='delete-button' onClick={() => this.handleDelete(e.id)}>Delete</button> */}
+                    
                     </div>
                 )
             })
