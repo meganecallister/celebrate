@@ -176,7 +176,7 @@ input:focus {
         padding-right: 10vw;
         box-sizing: border-box;
     }
-    .friends .modal-content h2 {
+    .friends h2 {
         height: 10%;
         font-size: 60px;
         margin: 0;
@@ -186,6 +186,8 @@ input:focus {
         justify-content: center;
         font-family: 'Dancing Script', cursive;
         color: rgb(255, 36, 109);
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
     .friends .modal-content {
         background: rgba(255, 255, 255, 1);

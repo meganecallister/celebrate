@@ -36,3 +36,31 @@
 .about .welcome {
     margin-bottom: 25vh;
 }
+@media (max-width: 685px) {
+    .about {
+        min-height: 85vh;
+        width: 100%;
+    }
+    .about .body {
+        background-color: white;
+        min-height: 85vh;
+        width: 100%;
+        margin: auto;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        box-sizing: border-box;
+    }
+    .about h2 {
+        height: 10%;
+        font-size: 60px;
+        margin: 0;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Dancing Script', cursive;
+        color: rgb(255, 36, 109);
+    }
+}

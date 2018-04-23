@@ -175,16 +175,18 @@ input:focus {
         padding: 1vw;
         padding-top: 5vh;
     }
-    .profile-update h2 {
+    .profile h2 {
         height: 15%;
         font-size: 60px;
         margin: 0;
         text-align: center;
-         display: flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         font-family: 'Dancing Script', cursive;
         color: rgb(255, 36, 109);
+        margin-top: 5vh;
+        margin-bottom: 5vh;
     }
     .close-profile-modal {
         height: 18vh;

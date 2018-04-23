@@ -135,6 +135,16 @@ button:focus {
         z-index: 20px;
         margin-right: 10px;
     }
+    .dropdown-content {
+        position: fixed;
+        top: 16vh;
+        right: -150px;
+        transition: all .7s ease;
+        width: 110px;
+    }
+    .show {
+        right: 0px;
+    }
     .menu-svg {
         width: 30px;
     }

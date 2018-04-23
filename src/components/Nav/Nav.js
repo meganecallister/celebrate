@@ -1,10 +1,28 @@
-// import React, { Component } from 'react';
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.css';
 import party from '../../party-background.jpg';
 
-function Nav(props) {
+class Nav extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            dropDown: false
+        }
+    }
+
+
+    handleDropDown() {
+        this.setState({
+            dropDown: !this.state.dropDown
+        })
+        console.log('clicked on dropdown!')
+    }
+
+
+
+    render() {
         return (
             <div className='nav'>
     
@@ -13,14 +31,17 @@ function Nav(props) {
                 <div className='navBar'>
                 
                     <div className='info'>
-                    {props.userDataJSX}
+                    {this.props.userDataJSX}
                     </div>
 
-                    <div className="HAM" onClick={props.handleDropDown}>
+                    <div className="HAM" onClick={() => {this.handleDropDown()}}>
+
                         <svg className="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
                             <path fill="#000" d="M8.667 15h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1zM8.667 37h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1zM8.667 26h30c.552 0 1-.447 1-1s-.448-1-1-1h-30c-.552 0-1 .447-1 1s.447 1 1 1z"/>
                         </svg>
-                        <div id='dropLinks' className='dropdown-content'>
+
+
+                        <div id='dropLinks' className={`${this.state.dropDown? 'show' : '' } dropdown-content`}>
                             <Link to='/main/profile'><button >Profile</button></Link>
 
                             <Link to='/main/friends'><button >Friends</button></Link>
@@ -29,8 +50,8 @@ function Nav(props) {
                             
                             <Link to='/main/about'><button >About</button></Link>
                             <a href={ process.env.REACT_APP_LOGOUT }>
-                            <button>Log out</button>
-                        </a>
+                                <button>Log out</button>
+                            </a>
                         </div>
 
                     </div>
@@ -52,6 +73,6 @@ function Nav(props) {
             </div>
         )       
     }
-// }
+}
     
 export default Nav;
