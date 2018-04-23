@@ -6,6 +6,8 @@ const initialState = {
     color: '',
     cake: '',
     icecream: '',
+    candy: '',
+    treat: '',
     friends: [],
 }
 
@@ -16,6 +18,8 @@ const UPDATE_BIRTHDAY_TYPE = 'UPDATE_BIRTHDAY_TYPE';
 const UPDATE_COLOR_TYPE = 'UPDATE_COLOR_TYPE';
 const UPDATE_CAKE_TYPE = 'UPDATE_CAKE_TYPE';
 const UPDATE_ICE_CREAM_TYPE = 'UPDATE_ICE_CREAM_TYPE';
+const UPDATE_CANDY_TYPE = 'UPDATE_CANDY_TYPE';
+const UPDATE_TREAT_TYPE = 'UPDATE_TREAT_TYPE';
 
 
 function reducer(state = initialState, action) {
@@ -39,6 +43,12 @@ function reducer(state = initialState, action) {
 
         case UPDATE_ICE_CREAM_TYPE:
             return Object.assign({}, state, { icecream: action.payload });
+
+        case UPDATE_CANDY_TYPE:
+            return Object.assign({}, state, { candy: action.payload });
+
+        case UPDATE_TREAT_TYPE:
+            return Object.assign({}, state, { treat: action.payload });
 
         default: return state;
     }
@@ -85,6 +95,18 @@ export function updateIceCreamType( icecream ) {
     return {
         type: UPDATE_ICE_CREAM_TYPE,
         payload: icecream
+    }
+}
+export function updateCandyType( candy ) {
+    return {
+        type: UPDATE_CANDY_TYPE,
+        payload: candy
+    }
+}
+export function updateTreatType( treat ) {
+    return {
+        type: UPDATE_TREAT_TYPE,
+        payload: treat
     }
 }
 

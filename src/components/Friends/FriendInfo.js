@@ -22,11 +22,13 @@ class FriendInfo extends Component {
                     <p>{`Color: ${e.color}`}</p>
                     <p>{`Cake: ${e.cake}`}</p>
                     <p>{`Ice cream: ${e.icecream}`}</p>
+                    <p>{`Candy: ${e.candy}`}</p>
+                    <p>{`Treat: ${e.treat}`}</p>
                     </div>
 
                     <div className='close-friends-modal'>
                         <button onClick={this.props.closeModal}>Close</button>   
-                        <button className='delete-button' onClick={() => this.props.handleDelete(e.id)}>Delete Friend</button>
+                        <button id='delete' onClick={() => this.props.handleDelete(e.id)}>Delete Friend</button>
                     </div>
                 </div>
             )

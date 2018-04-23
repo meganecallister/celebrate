@@ -231,6 +231,9 @@ input:focus {
         font-size: 18px;
         cursor: pointer;
     }
+    #delete {
+        background: #aaa;
+    }
     .add-friend {
         width: 80vw;
         margin-bottom: 20px;

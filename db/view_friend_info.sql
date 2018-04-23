@@ -3,7 +3,7 @@
 -- JOIN Friends f ON f.friend_id = u.id
 -- WHERE f.user_id = $1 AND f.friend_id = $2;
 
-SELECT birthday, color, cake, icecream, i.id
+SELECT birthday, color, cake, icecream, candy, treat, i.id
 FROM Info i
 JOIN Friends f ON f.friend_id = i.id
 WHERE f.user_id = $1 AND f.friend_id = $2;

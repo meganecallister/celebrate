@@ -43,6 +43,12 @@ class Main extends Component {
     handleChangeIceCream(e) {
         this.setState({icecream: e.target.value});
     }
+    handleChangeCandy(e) {
+        this.setState({candy: e.target.value});
+    }
+    handleChangeTreat(e) {
+        this.setState({treat: e.target.value});
+    }
    
 
 

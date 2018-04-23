@@ -3,7 +3,7 @@ import './Profile.css';
 import axios from 'axios';
 import ProfileUpdate from './ProfileUpdate';
 import { connect } from 'react-redux';
-import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType } from '../../ducks/reducer';
+import { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType, updateCandyType, updateTreatType } from '../../ducks/reducer';
 
 class Profile extends Component {
     constructor() {
@@ -24,8 +24,8 @@ class Profile extends Component {
     }
 //trying a post, lolz
     handleSave() {
-        const { birthday, color, cake, icecream } = this.props;
-        const body = { birthday, color, cake, icecream }
+        const { birthday, color, cake, icecream, candy, treat} = this.props;
+        const body = { birthday, color, cake, icecream, candy, treat }
         console.log(body)
         console.log('profileInfo:', this.state.profileInfo)
         axios.post('/api/updateInfo/', body)
@@ -44,7 +44,10 @@ class Profile extends Component {
     closeModal = () => {
         document.getElementById('myModal').style.display = 'none';
     }
-
+    
+    deleteAccount() {
+        axios.delete('/api/deleteAccount')
+    }
 
     render() {
         let preferences = this.state.profileInfo.map( (e, i) => {
@@ -54,24 +57,31 @@ class Profile extends Component {
                     <p>{`Color: ${e.color}`}</p>
                     <p>{`Cake: ${e.cake}`}</p>
                     <p>{`Ice cream: ${e.icecream}`}</p>
+                    <p>{`Candy: ${e.candy}`}</p>
+                    <p>{`Treat: ${e.treat}`}</p>
                 </div>
             )
         })   
 
         return (
             <div className='profile'>
-            
                 <div className='body'>
+
                     <h2>Profile</h2>
 
                     { preferences }
-                    <button onClick={this.openModal}>Update Info</button>
+
+                    <div className='buttons'>
+                        <button onClick={this.openModal}>Update Info</button>
+                        <button id='delete' onClick={this.deleteAccount}>Delete Account</button>
+                    </div>
 
                     <div id="myModal" style={{display: 'none'}}>
                         <div className='modal-content'>
                             <ProfileUpdate
                                 handleSave={this.handleSave}
                                 closeModal={this.closeModal}
+                                profileInfo={this.state.profileInfo}
                             />
                            
                         </div>
@@ -84,13 +94,15 @@ class Profile extends Component {
 }
 
 function mapStateToProps( state ) {
-    const { birthday, color, cake, icecream } = state;
+    const { birthday, color, cake, icecream, candy, treat } = state;
 
     return {
         birthday,
         color,
         cake,
-        icecream
+        icecream,
+        candy,
+        treat
     }
 }
-export default connect( mapStateToProps, { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType })(Profile);
+export default connect( mapStateToProps, { updateBirthdayType, updateColorType, updateCakeType, updateIceCreamType, updateCandyType, updateTreatType })(Profile);

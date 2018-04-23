@@ -100,7 +100,7 @@ app.post('/api/updateInfo', (req, res) => {
     console.log('server: trying to update!')
     console.log(req.body)
     const db = req.app.get('db');
-    const { birthday, color, cake, icecream } = req.body;
+    const { birthday, color, cake, icecream, candy, treat } = req.body;
     db.find_session_user([req.session.passport.user]).then((userId) => {
         console.log(userId);
         if(!userId[0]) {
@@ -108,16 +108,8 @@ app.post('/api/updateInfo', (req, res) => {
             console.log('server: could not find an id...')
         } else {
             console.log('else')
-            // db.find_info([req.params.id]).then( infoResult => {
-            //     if(!infoResult[0]) {
-            //         console.log('server: could not find info so I am adding some')
-            //         console.log('server 106', req.params.id, req.body)
-            //         db.create_info([birthday, color, cake, icecream]).then( createdInfo => {
-            //             res.send(createdInfo)
-            //         })
-            //     } else {
                     console.log(req.session.passport)
-                    db.update_info([birthday, color, cake, icecream, req.session.passport.user])
+                    db.update_info([birthday, color, cake, icecream, candy, treat, req.session.passport.user])
                     .then( newInfo => {
                         console.log('newInfo ==>', newInfo)
                         console.log('Oh I know you I am adding the updates')
@@ -125,9 +117,13 @@ app.post('/api/updateInfo', (req, res) => {
                     })
                 }
             })
-        // }
-    })
-// })
+        })
+
+app.delete('/api/deleteAccount', (req, res) => {
+    console.log('trying to delete account!')
+    const db = req.app.get('db');
+
+})
 
 //===============   FRIENDS   =============//
 
