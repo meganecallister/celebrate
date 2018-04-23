@@ -14,7 +14,7 @@ class ProfileUpdate extends Component {
         return (
             <div className='profile-update'>
               
-                <h1>Update</h1>
+                <h2>Update</h2>
                 
             <div className='profile-inputs'>
                         <input

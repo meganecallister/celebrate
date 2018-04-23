@@ -59,6 +59,7 @@
     padding-left: 8px;
 }
 
+
 .friendsList {
     /* background: #777; */
     display: flex;
@@ -91,13 +92,7 @@
     font-size: 18px;
     margin: 0;
 }
-.each-friend .delete-button {
-    background: rgb(255, 36, 109);
-    color: white;
-    max-width: 20px;
-    height: 35px;
-    margin: 0;
-}
+
 
 
 #myFriendModal {
@@ -112,9 +107,9 @@
 }
 .friends .modal-content {
     background: rgba(255, 255, 255, 1);
-    min-height: 70%;
+    min-height: 80%;
     width: 60vw;
-    top: 15%;
+    top: 10%;
     left: 20%;
     position: absolute;
     z-index: 11px;
@@ -126,22 +121,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* align-items: center; */
     box-shadow: 1px 1px 3px #555;
 }
-/* .friends .friend-info {
-    background: blue;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.friends .friends-info img {
-    border-radius: 50%;
-    height: 80px;
+.modal-content h2 {
     margin: 0;
-    box-shadow: 1px 1px 3px #ccc;
-} */
+}
+.friends .friend-info {
+    width: 60%;
+    margin-left: 6vw;
+    margin-bottom: 30px;
+}
 .close-friends-modal {
     height: 25%;
     width: 100%;
@@ -150,11 +140,120 @@
     justify-content: center;
     align-items: center;
     margin: 0;
+    margin-top: 10px;
 }
-#exit {
-    height: 20px;
-    width: 20px;
+.close-friends-modal button {
+    background: rgb(255, 36, 109);
+    color: white;
+    min-width: 150px;
+    width: 40%;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    box-sizing: border-box;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 8px;
 }
 input:focus {
     outline: solid 1px rgb(255, 36, 109);;
+}
+
+
+
+
+@media (max-width: 685px) {
+    .friends {
+        min-height: 85vh;
+        width: 100%;
+    }
+    .friends .body {
+        background-color: white;
+        min-height: 85vh;
+        width: 100%;
+        margin: auto;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        box-sizing: border-box;
+    }
+    .friends .modal-content h2 {
+        height: 10%;
+        font-size: 60px;
+        margin: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Dancing Script', cursive;
+        color: rgb(255, 36, 109);
+    }
+    .friends .modal-content {
+        background: rgba(255, 255, 255, 1);
+        min-height: 80%;
+        width: 80vw;
+        top: 5%;
+        left: 10%;
+        position: absolute;
+        z-index: 11px;
+        border-radius: 5px;
+        padding: 5vw;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 1px 3px #555;
+    }
+
+    .close-friends-modal {
+        height: 25%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+    .modal-content button {
+        background: rgb(255, 36, 109);
+        color: white;
+        min-width: 150px;
+        width: 40%;
+        height: 40px;
+        border-radius: 3px;
+        border: none;
+        box-sizing: border-box;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    .add-friend {
+        width: 80vw;
+        margin-bottom: 20px;
+    }
+    .add-friend input {
+        min-width: 110px;
+        width: 60%;
+        margin-right: 2vw;
+    }
+    .add-friend .add-friend-button {
+        min-width: 100px;
+        width: 20%;
+    }
+    .friendsList {
+        /* background: #777; */
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        width: 80vw;
+        font-size: 18px;
+        padding: 5%;
+        box-sizing: border-box;
+    }
+    .each-friend {
+        margin: 5px;
+    }
+
 }

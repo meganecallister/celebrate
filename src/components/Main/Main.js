@@ -43,6 +43,34 @@ class Main extends Component {
         this.setState({icecream: e.target.value});
     }
    
+    // handleDropDown() {
+    //     document.getElementById("dropLinks").classlist.toggle("show");
+    //     console.log('clicked on dropdown!')
+    // }
+//I totally copied the following code. :S -*.*-
+    handleDropUp() {
+        document.getElementById("dropLinks").classlist.toggle("none");
+        // window.onclick = function(event) {
+        //     if (!event.target.matches('.dropbtn')) {
+      
+        //     var dropdowns = document.getElementsByClassName("dropdown-content");
+        //     var i;
+        //     for (i = 0; i < dropdowns.length; i++) {
+        //         var openDropdown = dropdowns[i];
+        //         if (openDropdown.classList.contains('show')) {
+        //         openDropdown.classList.remove('show');
+        //         }
+        //     }
+        //     }
+        // }
+    }
+
+
+
+
+
+
+
     render() {
         const { user } = this.props
         const userDataJSX = user.display_name ?
@@ -56,7 +84,12 @@ class Main extends Component {
 
         return (
             <div>
-                <Nav userDataJSX={userDataJSX} />
+                <Nav
+                    userDataJSX={userDataJSX}
+                    // handleDropDown={this.handleDropDown}
+                    // handleDropUp={this.handleDropUp}
+                />
+
                 {/* <Sidebar userDataJSX={userDataJSX}/> */}
                 <div className='main'>
                     <Switch>
